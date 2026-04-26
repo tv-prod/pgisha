@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>פגישת המראה | TV Production – אסטרטגיית וידאו שמוכרת</title>
+<meta name="description" content="פגישת המראה – פגישת אסטרטגיה חינמית לבעלי עסקים שרוצים שהסרטונים שלהם יביאו לקוחות, לא רק לייקים."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.logo-img{height:32px;width:auto;display:block}
+.logo-img--sm{height:24px}
+/* ── Scarcity Bar (replaces urgency bar) ── */
+.scarcity-bar{background:linear-gradient(180deg,#001a10,#002516);border-bottom:1px solid rgba(0,255,136,.35);padding:10px 16px;position:sticky;top:0;z-index:400;box-shadow:0 1px 10px rgba(0,255,136,.18);text-align:center}
+.scarcity-inner{max-width:740px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.scarcity-dot{width:8px;height:8px;border-radius:50%;background:#00ff88;animation:fomoPulse 1.4s ease-in-out infinite;flex-shrink:0}
+.scarcity-text{font-size:13px;font-weight:700;color:#d4ffe8}
+.scarcity-count{font-size:15px;font-weight:900;color:#00ff88}
+/* ── Contact Form ── */
+.form-section{padding:80px 0 100px}
+.form-card{background:linear-gradient(160deg,#0d1117,#0d1a2e);border:1.5px solid rgba(0,212,255,.3);border-radius:36px;padding:40px 24px;text-align:center;position:relative;overflow:hidden;max-width:540px;margin:0 auto}
+.form-card::before{content:'';position:absolute;top:-60%;left:-30%;width:160%;height:160%;background:radial-gradient(ellipse at 50% 0%,rgba(0,212,255,.07) 0%,transparent 65%);pointer-events:none}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;text-align:right}
+.form-label{font-size:13px;font-weight:600;color:rgba(168,168,192,.8)}
+.form-input{background:rgba(255,255,255,.05);border:1.5px solid rgba(0,212,255,.2);border-radius:12px;padding:14px 16px;color:#fff;font-family:'Heebo',sans-serif;font-size:15px;font-weight:500;width:100%;transition:border-color .2s}
+.form-input:focus{outline:none;border-color:var(--cyan);background:rgba(0,212,255,.05)}
+.form-input::placeholder{color:rgba(168,168,192,.4)}
+.form-submit{margin-top:8px}
+.form-note{font-size:12px;color:rgba(168,168,192,.5);margin-top:12px}
+/* ── Instagram Feed Embed ── */
+.ig-section{padding:60px 0;background:rgba(15,15,24,0.4);border-top:1px solid var(--black-border);border-bottom:1px solid var(--black-border)}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:600px;margin:28px auto 0}
+.ig-item{aspect-ratio:1/1;background:#0d0d1e;border-radius:4px;overflow:hidden;position:relative;cursor:pointer}
+.ig-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.ig-item:hover img{transform:scale(1.05)}
+.ig-overlay{position:absolute;inset:0;background:rgba(0,212,255,.15);opacity:0;display:flex;align-items:center;justify-content:center;transition:opacity .2s}
+.ig-item:hover .ig-overlay{opacity:1}
+.ig-icon{font-size:28px}
+.ig-follow-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#833ab4,#fd1d1d,#f77737);color:#fff;font-weight:700;font-size:14px;padding:12px 28px;border-radius:99px;margin-top:24px;text-decoration:none;transition:opacity .2s,transform .2s}
+.ig-follow-btn:hover{opacity:.9;transform:translateY(-2px)}
+/* ── Gift Section ── */
+.gift-section{padding:72px 0;background:linear-gradient(180deg,transparent 0%,rgba(0,212,255,.03) 50%,transparent 100%);border-top:1px solid var(--black-border)}
+.gift-card{background:var(--black-card);border:1.5px solid rgba(0,212,255,.25);border-radius:24px;padding:32px 24px;margin-top:28px;position:relative;overflow:hidden}
+.gift-items{display:flex;flex-direction:column;gap:14px;margin-top:20px;text-align:right}
+.gift-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.12);border-radius:12px}
+.gift-icon{font-size:24px;flex-shrink:0}
+.gift-text{font-size:14px;color:var(--white-dim);line-height:1.6}
+.gift-text strong{color:var(--white)}
+/* ── For Whom Section ── */
+.forwhom-section{padding:72px 0;background:rgba(15,15,24,0.4);border-bottom:1px solid var(--black-border)}
+.forwhom-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.forwhom-col{background:var(--black-card);border:1.5px solid var(--black-border);border-radius:20px;padding:24px 18px}
+.forwhom-col--yes{border-color:rgba(0,212,255,.3)}
+.forwhom-col--no{border-color:rgba(255,80,80,.2)}
+.forwhom-col-title{font-size:14px;font-weight:800;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--black-border)}
+.forwhom-col--yes .forwhom-col-title{color:var(--cyan)}
+.forwhom-col--no .forwhom-col-title{color:#ff6060}
+.forwhom-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--white-dim);line-height:1.55;margin-bottom:10px}
+.forwhom-item-icon{flex-shrink:0;font-size:14px}
+/* ── Video Testimonials Carousel ── */
+.video-testi-section{padding:60px 0 40px;background:linear-gradient(180deg,#0a0a14 0%,#06060f 100%)}
+.video-testi-heading{text-align:center;padding:0 20px;margin-bottom:32px}
+.video-testi-tag{display:inline-block;background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.3);color:#00d4ff;font-size:13px;font-weight:600;padding:6px 16px;border-radius:100px;margin-bottom:16px;letter-spacing:.5px}
+.video-testi-title{font-size:clamp(1.5rem,5vw,2rem);font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3}
+.video-testi-sub{color:rgba(255,255,255,.55);font-size:14px;margin:0}
+.video-carousel-wrap{position:relative;overflow:hidden;max-width:420px;margin:0 auto;border-radius:20px}
+.video-carousel-track{display:flex;direction:ltr;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
+.video-slide{flex:0 0 100%;min-width:0;padding:0 16px;box-sizing:border-box}
+.video-slide-inner{background:linear-gradient(145deg,#151525,#0d0d1e);border:1px solid rgba(0,212,255,.18);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.video-iframe-wrap{position:relative;padding-bottom:177.78%;height:0;background:#070712;overflow:hidden}
+.video-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-slide-label{display:none !important;}
+.video-slide-avatar{display:none;}
+.video-slide-name{display:none;}
+.video-slide-role{display:none;}
+.video-stars{display:none;}
+.video-carousel-btn{position:absolute;top:38%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(0,212,255,.18);border:1.5px solid rgba(0,212,255,.45);color:#00d4ff;font-size:22px;cursor:pointer;z-index:20;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s;backdrop-filter:blur(6px)}
+.video-carousel-btn:hover{background:rgba(0,212,255,.32);transform:translateY(-50%) scale(1.1)}
+.video-carousel-btn--prev{right:0}
+.video-carousel-btn--next{left:0}
+.video-dots{display:flex;justify-content:center;gap:7px;margin-top:20px;padding-bottom:8px}
+.video-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .25s,transform .25s;cursor:pointer}
+.video-dot.active{background:#00d4ff;transform:scale(1.3)}
+/* ── Press Section ── */
+.press-section{padding:64px 0 56px;background:linear-gradient(180deg,#050510 0%,#080818 100%);text-align:center;overflow:hidden;position:relative}
+.press-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.4),transparent)}
+.press-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.4),transparent)}
+.press-inner{padding:0 24px;position:relative;z-index:2}
+.press-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);color:#00d4ff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:20px;letter-spacing:.5px;text-transform:uppercase}
+.press-headline{font-size:clamp(2rem,8vw,2.8rem);font-weight:900;color:#fff;margin:0 0 6px;line-height:1.15}
+.press-headline span{background:linear-gradient(90deg,#00d4ff,#0099cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.press-subhead{font-size:16px;color:rgba(255,255,255,.6);margin:0 0 28px;font-weight:400}
+.press-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0e3a6e,#1a6abf);color:#fff;font-size:16px;font-weight:700;padding:14px 30px;border-radius:100px;text-decoration:none;box-shadow:0 4px 24px rgba(0,150,255,.35);transition:transform .2s,box-shadow .2s;margin-bottom:40px}
+.press-cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,150,255,.55)}
+.press-images{display:flex;justify-content:center;align-items:center;gap:0;position:relative;min-height:260px;margin:0 -10px}
+.press-img-wrap{position:relative;width:58%;max-width:220px;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.6);border:2px solid rgba(255,255,255,.12);transition:transform .3s ease}
+.press-img-wrap:first-child{transform:rotate(-6deg) translateX(20px);z-index:1}
+.press-img-wrap:last-child{transform:rotate(6deg) translateX(-20px);z-index:1}
+.press-img-wrap:hover{transform:rotate(0deg) scale(1.04) !important;z-index:5}
+.press-img-wrap img{width:100%;display:block}
+/* ── Logos Section ── */
+.logos-section{padding:56px 40px;background:linear-gradient(180deg,#07070f 0%,#0d0d1a 100%);position:relative}
+.logos-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:36px}
+.logos-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:32px 48px;max-width:900px;margin:0 auto}
+.logo-item{display:flex;align-items:center;justify-content:center;opacity:.45;transition:opacity .3s ease}
+.logo-item:hover{opacity:.85}
+.logo-item img{height:46px;width:auto;max-width:160px;object-fit:contain;display:block;filter:brightness(0) invert(1)}
+/* ── Cinema Cards (About) ── */
+.founders-cinema{display:flex;gap:0;justify-content:center;margin:28px 0;flex-wrap:wrap}
+.cinema-card{position:relative;width:50%;max-width:320px;overflow:hidden;cursor:pointer}
+.cinema-img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;filter:grayscale(20%);transition:filter .4s,transform .4s}
+.cinema-card:hover .cinema-img{filter:grayscale(0%);transform:scale(1.03)}
+.cinema-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 18px 18px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff}
+.cinema-name{font-size:22px;font-weight:900;line-height:1}
+.cinema-card--gal .cinema-name{color:var(--cyan)}
+.cinema-card--tal .cinema-name{color:#a78bfa}
+.cinema-role{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px}
+@media(max-width:480px){.forwhom-grid{grid-template-columns:1fr}.ig-grid{grid-template-columns:repeat(3,1fr)}}
+.ig-widget-container a[href*="elfsight"] { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+.eapps-link { display: none !important; }
+.eapps-instagram-feed-header { display: none !important; }
+
+/* ── Success Message Animation ── */
+.success-msg-sub {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #00ff88;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideUpFade 0.6s ease forwards;
+}
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Global Animated Background ── */
+.global-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -10;
+  overflow: hidden;
+  background-color: var(--black);
+}
+.bg-grid {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+.orb-parallax {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+}
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  animation: floatOrb 20s infinite ease-in-out alternate;
+}
+.bg-orb-1 {
+  width: 50vw; height: 50vw;
+  background: var(--cyan);
+  top: -10%; right: -10%;
+  animation-duration: 25s;
+}
+.bg-orb-2 {
+  width: 60vw; height: 60vw;
+  background: #a78bfa;
+  bottom: -20%; left: -10%;
+  animation-duration: 28s;
+  animation-delay: -5s;
+  opacity: 0.12;
+}
+.bg-orb-3 {
+  width: 40vw; height: 40vw;
+  background: #00ff88;
+  top: 40%; left: 30%;
+  animation-duration: 35s;
+  animation-delay: -10s;
+  opacity: 0.08;
+}
+.bg-noise {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, 10%) scale(1.1); }
+  100% { transform: translate(-5%, -5%) scale(0.9); }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ GLOBAL BACKGROUND ══════════════ -->
+<div class="global-bg">
+  <div class="bg-grid"></div>
+  <div class="orb-parallax" data-speed="0.15"><div class="bg-orb bg-orb-1"></div></div>
+  <div class="orb-parallax" data-speed="-0.1"><div class="bg-orb bg-orb-2"></div></div>
+  <div class="orb-parallax" data-speed="0.05"><div class="bg-orb bg-orb-3"></div></div>
+  <div class="bg-noise"></div>
+</div>
+<!-- ══════════════ QUIZ ══════════════ -->
+<div id="quiz-phase" class="quiz-phase">
+  <div class="quiz-header">
+    <div class="quiz-logo"><img src="logo.png" alt="TV Production" class="logo-img logo-img--sm"/></div>
+    <div class="quiz-progress-wrap"><div class="quiz-progress-bar" id="quizProgressBar"></div></div>
+    <div class="quiz-step-label" id="quizStepLabel">שאלה 1 מתוך 5</div>
+  </div>
+  <div class="quiz-body">
+
+    <div class="quiz-question active" id="q1">
+      <div class="q-num">01</div>
+      <h2 class="q-title">מה הסרטונים שלך כרגע מביאים לעסק?</h2>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="selectOption(this,1)"><span class="opt-emoji">📞</span><span>פניות ועסקאות - הסרטונים עובדים בשבילי</span></button>
+        <button class="quiz-option" onclick="selectOption(this,1)"><span class="opt-emoji">❤️</span><span>לייקים ושיתופים, אבל לא פניות אמיתיות</span></button>
+        <button class="quiz-option" onclick="selectOption(this,1)"><span class="opt-emoji">🤷</span><span>כמעט כלום – הסרטונים נשכחים אחרי יום</span></button>
+        <button class="quiz-option" onclick="selectOption(this,1)"><span class="opt-emoji">🎬</span><span>עדיין לא עשיתי סרטונים בכלל</span></button>
+      </div>
+    </div>
+
+    <div class="quiz-question" id="q2">
+      <div class="q-num">02</div>
+      <h2 class="q-title">אתה מעלה את הסרטונים לפי אסטרטגיה מוגדרת?</h2>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="selectOption(this,2)"><span class="opt-emoji">✅</span><span>גורמים ללקוחות לפנות אלי - עוזרים לי במכירות!</span></button>
+        <button class="quiz-option" onclick="selectOption(this,2)"><span class="opt-emoji">🎲</span><span>ניסוי וטעייה – מעלה ומקווה לטוב</span></button>
+        <button class="quiz-option" onclick="selectOption(this,2)"><span class="opt-emoji">❌</span><span>אין לי שום אסטרטגיה</span></button>
+        <button class="quiz-option" onclick="selectOption(this,2)"><span class="opt-emoji">🤔</span><span>יש משהו בראש אבל לא מסודר</span></button>
+      </div>
+    </div>
+
+    <div class="quiz-question" id="q3">
+      <div class="q-num">03</div>
+      <h2 class="q-title">מה קורה לסרטונים שלך אחרי ההעלאה?</h2>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">⚙️</span><span>גורמים ללקוחות לפנות אלי - עוזרים לי במכירות!</span></button>
+        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">💀</span><span>נשכחים בגלריה ולא מביאים כלום</span></button>
+        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">📉</span><span>טובים ל-24 שעות ואז שקט...</span></button>
+        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">💭</span><span>אף פעם לא חשבתי על זה</span></button>
+      </div>
+    </div>
+
+    <div class="quiz-question" id="q4">
+      <div class="q-num">04</div>
+      <h2 class="q-title">מה מצב הקמפיינים בממומן שלך כרגע?</h2>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="selectOption(this,4)"><span class="opt-emoji">🚀</span><span>מריץ ויש תוצאות – אבל רוצה יותר</span></button>
+        <button class="quiz-option" onclick="selectOption(this,4)"><span class="opt-emoji">🔥</span><span>מריץ אבל שורף כסף בלי תוצאות</span></button>
+        <button class="quiz-option" onclick="selectOption(this,4)"><span class="opt-emoji">⏸️</span><span>עדיין לא התחלתי – פוחד לבזבז</span></button>
+        <button class="quiz-option" onclick="selectOption(this,4)"><span class="opt-emoji">😤</span><span>נשרפתי בעבר ולא רוצה לנסות שוב</span></button>
+      </div>
+    </div>
+
+    <div class="quiz-question" id="q5">
+      <div class="q-num">05</div>
+      <h2 class="q-title">מה הכי מעצבן אותך עכשיו?</h2>
+      <div class="quiz-options">
+        <button class="quiz-option quiz-option--yes" onclick="selectOption(this,5)"><span class="opt-emoji">😤</span><span>הפער בין מה שאני שווה לבין איך שאני נראה על המסך</span></button>
+        <button class="quiz-option" onclick="selectOption(this,5)"><span class="opt-emoji">👀</span><span>מתחרים גרועים ממני עוקפים אותי בסיבוב</span></button>
+        <button class="quiz-option" onclick="selectOption(this,5)"><span class="opt-emoji">💸</span><span>שורף כסף על תוכן שלא עושה כלום</span></button>
+        <button class="quiz-option" onclick="selectOption(this,5)"><span class="opt-emoji">🤯</span><span>לא יודע מאיפה להתחיל</span></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════ LOADING ══════════════ -->
+<div id="loading-screen" class="loading-screen hidden">
+  <div class="loading-content">
+    <div class="quiz-logo loading-logo-spacing"><img src="logo.png" alt="TV Production" class="logo-img"/></div>
+    <div class="spinner-wrap"><div class="spinner-ring"></div><div class="spinner-ring spinner-ring--2"></div></div>
+    <p class="loading-text">מנתחים את המצב שלך...</p>
+    <p class="loading-sub">מכינים את התובנות האישיות שלך</p>
+    <div class="loading-track"><div class="loading-fill" id="loadingFill"></div></div>
+  </div>
+</div>
+
+<!-- ══════════════ VSL PHASE ══════════════ -->
+<div id="vsl-phase" class="vsl-phase hidden">
+
+  <nav class="vsl-nav"><img src="logo.png" alt="TV Production" class="logo-img"/></nav>
+
+  <!-- Scarcity Bar -->
+  <div class="scarcity-bar" id="scarcityBar">
+    <div class="scarcity-inner">
+      <span class="scarcity-dot"></span>
+      <span class="scarcity-text">⚡ הזמן שלכם יקר - אל תבזבזו אותו על ניסוי וטעייה</span>
+      <span style="color:rgba(212,255,232,.5);font-size:13px">·</span>
+      <a href="#book-section" class="cta-btn cta-btn--sm" style="padding:8px 16px;font-size:12px">קבע עכשיו ←</a>
+    </div>
+  </div>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-inner">
+      <div class="sticky-info">
+        <span class="sticky-name">אסטרטגיה מוכחת לעסק שלך</span>
+        <span class="sticky-headline">פגישת המראה – אסטרטגיית וידאו</span>
+      </div>
+      <a href="#book-section" class="cta-btn cta-btn--sm">לקביעת פגישה ←</a>
+    </div>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero-section" id="hero-section">
+    <div class="hero-inner">
+      <div class="hero-badge" data-scroll-reveal="fade-up" data-delay="0">🎯 פגישת אסטרטגיה | ללא עלות</div>
+      <h1 class="hero-title" data-scroll-reveal="fade-up" data-delay="100">
+        סרטון אחד לא יציל<br/>את העסק שלך —<br/>
+        <span class="hero-accent">אסטרטגיה של סרטונים<br/>בעלי מטרות כן.</span>
+      </h1>
+      <p class="hero-sub" data-scroll-reveal="fade-up" data-delay="180">
+        בפגישת ההמראה נבנה לך <strong>מסלול צפייה חכם</strong> שהופך זרים ללקוחות:<br/>
+        <strong>היכרות ← אמון ← פנייה חמה.</strong>
+      </p>
+      <div class="vsl-video-wrap" data-scroll-reveal="scale-up" data-delay="260">
+        <div class="vsl-video-inner">
+          <div class="vsl-glow" style="z-index:-1;"></div>
+          <iframe id="vsl-hero-iframe"
+            data-src="https://player.vimeo.com/video/1184860030?autoplay=1&autopause=0&badge=0&player_id=vsl-hero-iframe&app_id=58479"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="פגישת המראה – TV Production"
+            style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1.25);width:100%;height:100%;border:none;border-radius:inherit;"></iframe>
+        </div>
+      </div>
+      <div class="hero-cta-area" data-scroll-reveal="fade-up" data-delay="360">
+        <a href="#book-section" class="cta-btn cta-btn--hero cta-pulse">🔥 אני רוצה לקבוע פגישת המראה!</a>
+        <span class="urgency-micro">✓ ללא עלות · ✓ 60 דקות · ✓ ללא התחייבות</span>
+      </div>
+      <div class="hero-stats" data-scroll-reveal="fade-up" data-delay="440">
+        <div class="hstat"><span class="hstat-num counter" data-target="150">0</span><span class="hstat-num-plus">+</span><span class="hstat-sub">עסקים</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-num counter" data-target="7">0</span><span class="hstat-num-plus">+</span><span class="hstat-sub">שנות ניסיון</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-num">⭐ 4.9</span><span class="hstat-sub">דירוג ממוצע</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AUTHORITY / PRESS ══ -->
+  <section class="press-section" id="press-section">
+    <div class="press-inner">
+      <h2 class="press-headline" data-scroll-reveal="fade-up" data-delay="60">אמא אני <span>בעיתון!</span></h2>
+      <p class="press-subhead" data-scroll-reveal="fade-up" data-delay="100">כתבה בישראל היום על הדרך שבה אנחנו הופכים סרטונים לכלי עסקי שמקדם אותך!</p>
+      <a href="https://www.israelhayom.co.il/you-may-find-interesting/article/19061971" target="_blank" rel="noopener" class="press-cta" data-scroll-reveal="fade-up" data-delay="140">📖 לכתבה המלאה</a>
+      <div class="press-images" data-scroll-reveal="fade-up" data-delay="200">
+        <div class="press-img-wrap"><img src="press1.jpg" alt="כתבה בישראל היום" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a1628,#1a3a6e)';this.style.display='none';"/></div>
+        <div class="press-img-wrap"><img src="press2.jpg" alt="כתבה בישראל היום" onerror="this.parentElement.style.background='linear-gradient(135deg,#0d1f3c,#1a4080)';this.style.display='none';"/></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CLIENT LOGOS ══ -->
+  <section class="logos-section" id="logos-section">
+    <div class="logos-label">עבדנו עם מאות עסקים, אלו חלקם</div>
+    <div class="logos-grid">
+      <div class="logo-item"><img src="logo-client-01.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-02.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-03.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-04.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-05.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-06.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-07.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-08.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-09.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-10.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+      <div class="logo-item"><img src="logo-client-11.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+    </div>
+  </section>
+  <!-- ══ PAIN LOOP ══ -->
+  <section class="pain-section pain-section--loop">
+    <div class="pain-statements-wrap">
+      <div class="pain-stmt pain-stmt--opener" data-scroll-reveal="fade-up">תחשוב על הסרטונים שעשית עד היום.</div>
+      <div class="pain-stmt pain-stmt--q" data-scroll-reveal="fade-up">כמה מהם באמת<br/>הביאו לקוח חדש?</div>
+      <div class="pain-stmt" data-scroll-reveal="fade-up">השקעת כסף בסרטון תדמית מרהיב.<br/><span class="pain-dim">העלת אותו לאינסטגרם.</span><br/><span class="pain-dim">ואז... שתיקה.</span></div>
+      <div class="pain-divider"></div>
+      <div class="pain-stmt" data-scroll-reveal="fade-up">הבעיה היא לא הסרטון.<br/><span style="font-style:normal; font-weight:900; color:#fff; display:block; margin-top:10px;">הבעיה היא שסרטון 1 לא יציל את העסק שלך!</span></div>
+      <div class="pain-stmt" data-scroll-reveal="fade-up">אתם רואים מתחרים פחות טובים מכם<br/><span class="cyan">עוקפים אתכם בסיבוב</span><br/>רק כי הם יודעים לבנות<br/>מסלול צפייה שמוכר.</div>
+      <div class="pain-stmt" data-scroll-reveal="fade-up">אתה מרגיש<br/><span class="cyan">שקוף. עייף וחבל!</span><br/>כי אתם טובים במה שאתם עושים.<br/><span class="pain-dim">אבל מי שרואה אתכם לא מבין את זה.</span></div>
+      <div class="pain-divider"></div>
+      <div class="pain-stmt pain-stmt--q" data-scroll-reveal="fade-up">מה אם במקום להמשיך לנחש<br/>היה מישהו שמסביר לך<br/><span class="cyan">בדיוק</span> מה לעשות?</div>
+      <div class="pain-stmt pain-stmt--verdict" data-scroll-reveal="fade-up">זה בדיוק מה שפגישת ההמראה עושה.</div>
+      <div class="pain-stmt pain-stmt--verdict-cyan" data-scroll-reveal="fade-up" data-delay="80">60 דקות. ללא עלות. עם תוכנית ביד.</div>
+    </div>
+  </section>
+
+  <!-- ══ SOLUTION – 5 שלבים ══ -->
+  <section class="solution-section">
+    <div class="section-inner solution-centered">
+      <div class="sec-tag" data-scroll-reveal="fade-up">🗺️ מה קורה בפגישה</div>
+      <h2 class="section-title sol-title-big" data-scroll-reveal="fade-up" data-delay="60">5 שלבי <span class="cyan">פגישת המראה</span></h2>
+      <p class="sec-subtitle" data-scroll-reveal="fade-up" data-delay="100">60 דקות שמשנות את כל הגישה לוידאו שיווקי</p>
+      <div class="sol-feature-list" data-scroll-reveal="fade-up" data-delay="140">
+        <div class="sol-feat">
+          <span class="sol-feat-num">01</span>
+          <span class="sol-feat-text"><strong style="color:#fff">🎯 אבחון ופיצוח מטרות</strong><br/>מגדירים תפקיד לכל סרטון במסע הלקוח – מי מהם לחשיפה, מי לאמון, ומי לסגירת עסקה.</span>
+        </div>
+        <div class="sol-feat">
+          <span class="sol-feat-num">02</span>
+          <span class="sol-feat-text"><strong style="color:#fff">🖼️ אולם תצוגה דיגיטלי</strong><br/>מסדרים את הנראות בסושיאל ובאתר כך שכל לקוח שנכנס מרגיש שהגיע למקום הנכון.</span>
+        </div>
+        <div class="sol-feat">
+          <span class="sol-feat-num">03</span>
+          <span class="sol-feat-text"><strong style="color:#fff">🔄 וידאו 360°</strong><br/>מיישמים את התוכן באתר, במצגות מכירה, במסכי תצוגה ובוואטסאפ – הוידאו עובד בכל מקום.</span>
+        </div>
+        <div class="sol-feat">
+          <span class="sol-feat-num">04</span>
+          <span class="sol-feat-text"><strong style="color:#fff">💰 פיצוח ההצעה ותשתית מכירות</strong><br/>מדייקים את ה-Offer ומוודאים שיש מוכנות לטיפול בלידים חמים שמגיעים.</span>
+        </div>
+        <div class="sol-feat">
+          <span class="sol-feat-num">05</span>
+          <span class="sol-feat-text"><strong style="color:#fff">🗺️ מפת דרכים למחר בבוקר</strong><br/>תוכנית עבודה פרקטית + אסטרטגיית ממומן – כך שאתה יודע בדיוק מה לעשות ביום שאחרי.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ THE GIFT ══ -->
+  <section class="gift-section">
+    <div class="section-inner">
+      <div class="sec-tag" data-scroll-reveal="fade-up">🎁 מה מקבלים בסוף הפגישה</div>
+      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="60">לא רק שיחה —<br/><span class="cyan">מסמך אסטרטגיה מעוצב מסודר וממוקד</span></h2>
+      <p class="sec-subtitle" data-scroll-reveal="fade-up" data-delay="100">בסיום כל פגישת המראה תקבל מסמך מוכן לפעולה</p>
+      <div class="gift-card" data-scroll-reveal="fade-up" data-delay="140">
+        <div class="gift-items">
+          <div class="gift-item">
+            <span class="gift-icon">📋</span>
+            <div class="gift-text"><strong>סיכום מלא של הפגישה</strong><br/>כל מה שדיברנו, כל החלטה, כל תובנה – מסודרים בצורה ברורה.</div>
+          </div>
+          <div class="gift-item">
+            <span class="gift-icon">🗺️</span>
+            <div class="gift-text"><strong>Roadmap וידאו מותאם אישית</strong><br/>מפת דרכים ספציפית לעסק שלך – אילו סרטונים לעשות קודם ולמה.</div>
+          </div>
+          <div class="gift-item">
+            <span class="gift-icon">📣</span>
+            <div class="gift-text"><strong>אסטרטגיית ממומן ראשונית</strong><br/>איך הממומן שלך הולך להיראות ואיך להפוך פניות קרות ללקוחות חמים.</div>
+          </div>
+          <div class="gift-item">
+            <span class="gift-icon">⚡</span>
+            <div class="gift-text"><strong>רשימת משימות למחר בבוקר</strong><br/>לא תצא עם "מחשבות". תצא עם פעולות ספציפיות שאתה יכול לבצע מחר.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ══ FOR WHOM ══ -->
+  <section class="forwhom-section">
+    <div class="section-inner">
+      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="60">הפגישה הזו היא <span class="cyan">לא</span> לכולם</h2>
+      <p class="sec-subtitle" data-scroll-reveal="fade-up" data-delay="100">אנחנו לא רוצים לבזבז לכם את הזמן.</p>
+      <div class="forwhom-grid" data-scroll-reveal="fade-up" data-delay="140">
+        <div class="forwhom-col forwhom-col--yes">
+          <div class="forwhom-col-title">✅ זה מתאים לך אם...</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✓</span>יש לך עסק יציב עם מוצר מוכח</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✓</span>מוכן לעמוד מול מצלמה</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✓</span>מחפש שותפים לדרך, לא ספקים</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✓</span>מבין ששיווק הוא תהליך הנדסי</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✓</span>מאס בגישת "להעלות ולקוות לטוב"</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✓</span>מוכן להשקיע באסטרטגיה לטווח ארוך</div>
+        </div>
+        <div class="forwhom-col forwhom-col--no">
+          <div class="forwhom-col-title">❌ זה לא מתאים לך אם...</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✗</span>העסק שלך קם אתמול</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✗</span>מחפש קסם מהיר ללא עבודה</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✗</span>רוצה "סרטון יפה" בלי אסטרטגיה</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✗</span>לא מוכן לעמוד מול מצלמה</div>
+          <div class="forwhom-item"><span class="forwhom-item-icon">✗</span>מחפש "הימור" שיצליח פעם אחת</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section class="about-section">
+    <div class="section-inner">
+      <div class="sec-tag" data-scroll-reveal="fade-up">👋 מי אנחנו</div>
+      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="80">גל ואורן וטל ויסמן<br/><span class="hero-accent" style="font-size:.65em">TV Production – חושבים קודם כמשווקים</span></h2>
+    </div>
+    <div class="founders-cinema">
+      <div class="cinema-card cinema-card--gal" data-scroll-reveal="fade-left">
+        <img src="gal.jpg" alt="גל – TV Production" class="cinema-img" onerror="this.style.display='none';this.parentElement.classList.add('cinema-no-img')"/>
+        <div class="cinema-overlay"><div class="cinema-name">גל</div><div class="cinema-role">הפקה & ביצוע</div></div>
+      </div>
+      <div class="cinema-card cinema-card--tal" data-scroll-reveal="fade-right">
+        <img src="tal.jpg" alt="טל – TV Production" class="cinema-img" onerror="this.style.display='none';this.parentElement.classList.add('cinema-no-img')"/>
+        <div class="cinema-overlay"><div class="cinema-name">טל</div><div class="cinema-role">אסטרטגיה & תוכן</div></div>
+      </div>
+    </div>
+    <div class="section-inner">
+      <div class="about-text" data-scroll-reveal="fade-up" data-delay="80">
+        <p>הקמנו את <strong>TV Production</strong> מתוך אמונה פשוטה:<br/><strong>וידאו הוא כלי עסקי — לא רק קישוט.</strong></p>
+        <p>ראינו עסקים מצוינים שנראים חובבניים על המסך.<br/>ראינו כסף שנשרף על סרטונים שלא עובדים בשביל אף אחד.<br/>ראינו קמפיינים ממומנים שנכשלים כי אין תשתית אמון.</p>
+        <p><strong>ההבדל הוא לא באיכות ההפקה. הוא באסטרטגיה.</strong><br/>בפגישת המראה נבנה איתך את האסטרטגיה הזו — ביחד.</p>
+        <div class="about-stats">
+          <div class="astat"><span class="astat-n counter" data-target="150">0</span><span class="astat-l">+ עסקים</span></div>
+          <div class="astat"><span class="astat-n counter" data-target="7">0</span><span class="astat-l">+ שנות ניסיון</span></div>
+          <div class="astat"><span class="astat-n">4.9⭐</span><span class="astat-l">דירוג</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="testimonials-section">
+    <div class="section-inner">
+      <div class="sec-tag" data-scroll-reveal="fade-up">💬 הם עברו פגישת המראה</div>
+      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="80">אל תאמין לנו – תאמין להם</h2>
+      <p class="sec-subtitle" data-scroll-reveal="fade-up" data-delay="120">הודעות שקיבלנו אחרי הפגישה</p>
+      <div class="wa-testimonials" data-scroll-reveal="fade-up" data-delay="160">
+        <div class="wa-bubble wa-bubble--received">
+          <p>גל וטל, אני חייב להגיד תודה. כל כך הרבה זמן הרגשתי שהעסק שלי נראה כמו חלטורה בדיגיטל, למרות שאנחנו הכי מקצועיים בתחומנו. סוף סוף יש לי מסלול ברור שמראה ללקוחות מי אנחנו באמת 🙏</p>
+          <span class="wa-name">ירון א., מנכ"ל חברת שירותים</span>
+        </div>
+        <div class="wa-bubble wa-bubble--sent">
+          <p>הכי כאב לי לראות מתחרים פחות טובים ממני עוקפים אותי רק כי הם 'צועקים' ברשת. אחרי פגישת ההמראה הבנתי בדיוק מה עשיתי לא נכון. ה-PDF שיצאתי איתו זו מפת הדרכים הכי פרקטית שקיבלתי.</p>
+          <span class="wa-name">מיכל ר., בעלת קליניקה לאסתטיקה</span>
+        </div>
+        <div class="wa-bubble wa-bubble--received">
+          <p>פעם ראשונה שמישהו לא מנסה למכור לי "סרטון יפה ומגניב", אלא יושב ובודק איך הוידאו אמור להביא כסף. שיניתם לי את כל התפיסה לגבי מה סרטון צריך לעשות 💪</p>
+          <span class="wa-name">דניאל ס., יועץ עסקי</span>
+        </div>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card" data-scroll-reveal="fade-up" data-delay="0">
+          <div class="testi-top">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#1a3a6b,#2d6abf)">ר</div>
+            <div class="testi-info"><div class="testi-name">רוני לוי</div><div class="testi-meta">קליניקה לפיזיותרפיה | תל אביב</div><div class="testi-stars">⭐⭐⭐⭐⭐</div></div>
+          </div>
+          <p class="testi-quote">הגעתי עם ערימת סרטונים שלא עשו כלום. יצאתי עם הבנה של למה הם לא עבדו ותוכנית לתקן את זה. הפגישה שווה עשרות אלפי שקלים.</p>
+        </div>
+        <div class="testi-card" data-scroll-reveal="fade-up" data-delay="70">
+          <div class="testi-top">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#4a1a6b,#8b2dbf)">ש</div>
+            <div class="testi-info"><div class="testi-name">שירה מיכאלי</div><div class="testi-meta">מעצבת גרפית | הרצליה</div><div class="testi-stars">⭐⭐⭐⭐⭐</div></div>
+          </div>
+          <p class="testi-quote">לא ידעתי שאני יכולה להיות מול מצלמה. גל ייצר לי את הסביבה הנכונה וטל בנה לי תסריט שמרגיש כמוני לגמרי. שינוי משמעותי.</p>
+        </div>
+        <div class="testi-card" data-scroll-reveal="fade-up" data-delay="140">
+          <div class="testi-top">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#1a4a2b,#2dbf5a)">א</div>
+            <div class="testi-info"><div class="testi-name">אמיר דוד</div><div class="testi-meta">יועץ משכנתאות | ירושלים</div><div class="testi-stars">⭐⭐⭐⭐⭐</div></div>
+          </div>
+          <p class="testi-quote">ה-PDF שקיבלתי בסוף הפגישה הוא מסמך אסטרטגי שאני משתמש בו כל שבוע. הם לא רק בנו לי תוכנית – הם לימדו אותי לחשוב אחרת.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ══ VIDEO TESTIMONIALS ══ -->
+  <section class="video-testi-section">
+    <div class="video-testi-heading" data-scroll-reveal="fade-up">
+      <div class="video-testi-tag">🎥 הלקוחות מספרים בעצמם</div>
+      <h3 class="video-testi-title">החליטו לפרגן!</h3>
+      <p class="video-testi-sub">בעלי עסקים שפגישת המראה שינתה להם את הגישה.</p>
+    </div>
+    <div style="position:relative;max-width:460px;margin:0 auto;padding:0 0 8px;" data-scroll-reveal="fade-up" data-delay="80">
+      <button class="video-carousel-btn video-carousel-btn--prev" id="vcPrev" aria-label="הקודם">&#8250;</button>
+      <button class="video-carousel-btn video-carousel-btn--next" id="vcNext" aria-label="הבא">&#8249;</button>
+      <div class="video-carousel-wrap">
+        <div class="video-carousel-track" id="vcTrack">
+          <div class="video-slide"><div class="video-slide-inner"><div class="video-iframe-wrap"><iframe id="vimeo-0" src="https://player.vimeo.com/video/1002408084?badge=0&autopause=0&player_id=vimeo-0&app_id=58479" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="המלצה 1"></iframe></div><div class="video-slide-label"><div class="video-slide-avatar">מ</div><div><div class="video-slide-name">מיטל כהן</div><div class="video-slide-role">בעלת בוטיק</div></div><div class="video-stars">★★★★★</div></div></div></div>
+          <div class="video-slide"><div class="video-slide-inner"><div class="video-iframe-wrap"><iframe id="vimeo-1" src="https://player.vimeo.com/video/1002407839?badge=0&autopause=0&player_id=vimeo-1&app_id=58479" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="המלצה 2"></iframe></div><div class="video-slide-label"><div class="video-slide-avatar">א</div><div><div class="video-slide-name">אורן מ.</div><div class="video-slide-role">יועץ עסקי</div></div><div class="video-stars">★★★★★</div></div></div></div>
+          <div class="video-slide"><div class="video-slide-inner"><div class="video-iframe-wrap"><iframe id="vimeo-2" src="https://player.vimeo.com/video/1002408420?badge=0&autopause=0&player_id=vimeo-2&app_id=58479" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="המלצה 3"></iframe></div><div class="video-slide-label"><div class="video-slide-avatar">י</div><div><div class="video-slide-name">יעל נ.</div><div class="video-slide-role">קוסמטיקאית</div></div><div class="video-stars">★★★★★</div></div></div></div>
+          <div class="video-slide"><div class="video-slide-inner"><div class="video-iframe-wrap"><iframe id="vimeo-3" src="https://player.vimeo.com/video/1002409056?badge=0&autopause=0&player_id=vimeo-3&app_id=58479" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="המלצה 4"></iframe></div><div class="video-slide-label"><div class="video-slide-avatar">ד</div><div><div class="video-slide-name">דוד א.</div><div class="video-slide-role">קבלן שיפוצים</div></div><div class="video-stars">★★★★★</div></div></div></div>
+          <div class="video-slide"><div class="video-slide-inner"><div class="video-iframe-wrap"><iframe id="vimeo-4" src="https://player.vimeo.com/video/1002408798?badge=0&autopause=0&player_id=vimeo-4&app_id=58479" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="המלצה 5"></iframe></div><div class="video-slide-label"><div class="video-slide-avatar">נ</div><div><div class="video-slide-name">נועה ש.</div><div class="video-slide-role">מאמנת אישית</div></div><div class="video-stars">★★★★★</div></div></div></div>
+          <div class="video-slide"><div class="video-slide-inner"><div class="video-iframe-wrap"><iframe id="vimeo-5" src="https://player.vimeo.com/video/1002409347?badge=0&autopause=0&player_id=vimeo-5&app_id=58479" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="המלצה 6"></iframe></div><div class="video-slide-label"><div class="video-slide-avatar">ר</div><div><div class="video-slide-name">רינת ג.</div><div class="video-slide-role">יועצת תזונה</div></div><div class="video-stars">★★★★★</div></div></div></div>
+          <div class="video-slide"><div class="video-slide-inner"><div class="video-iframe-wrap"><iframe id="vimeo-6" src="https://player.vimeo.com/video/1182638467?badge=0&autopause=0&player_id=vimeo-6&app_id=58479" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="המלצה 7"></iframe></div><div class="video-slide-label"><div class="video-slide-avatar">ג</div><div><div class="video-slide-name">גיל ב.</div><div class="video-slide-role">אדריכל</div></div><div class="video-stars">★★★★★</div></div></div></div>
+          <div class="video-slide"><div class="video-slide-inner"><div class="video-iframe-wrap"><iframe id="vimeo-7" src="https://player.vimeo.com/video/1182638535?badge=0&autopause=0&player_id=vimeo-7&app_id=58479" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen title="המלצה 8"></iframe></div><div class="video-slide-label"><div class="video-slide-avatar">ע</div><div><div class="video-slide-name">עמית ה.</div><div class="video-slide-role">רואה חשבון</div></div><div class="video-stars">★★★★★</div></div></div></div>
+        </div>
+      </div>
+      <div class="video-dots" id="vcDots">
+        <div class="video-dot active" data-idx="0"></div><div class="video-dot" data-idx="1"></div>
+        <div class="video-dot" data-idx="2"></div><div class="video-dot" data-idx="3"></div>
+        <div class="video-dot" data-idx="4"></div><div class="video-dot" data-idx="5"></div>
+        <div class="video-dot" data-idx="6"></div><div class="video-dot" data-idx="7"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INSTAGRAM FEED ══ -->
+  <section class="ig-section">
+    <div class="section-inner" style="text-align:center">
+      <div class="sec-tag" data-scroll-reveal="fade-up">📸 העבודות שלנו</div>
+      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="60">הכי חשוב שתתרשמו!</h2>
+      <!-- Instagram Widget Integration -->
+      <div class="ig-widget-container" data-scroll-reveal="fade-up" data-delay="140" style="width: 100%; max-width: 1000px; margin: 0 auto; margin-top: 30px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,212,255,0.05); border: 1px solid rgba(0,212,255,0.1);">
+        <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-f57a3ff2-3ba1-4816-ba2b-1bb73c9ffaa5" data-elfsight-app-lazy></div>
+      </div>
+      <a href="https://www.instagram.com/tv_prod?igsh=MWY1MWVtcmE4NjBzdg==" target="_blank" rel="noopener" class="ig-follow-btn cta-pulse" data-scroll-reveal="fade-up" data-delay="200" style="margin-top: 30px;">
+        📸 ישר לאינסטגרם שלנו!
+      </a>
+    </div>
+  </section>
+  <!-- ══ FAQ ══ -->
+  <section class="faq-section">
+    <div class="section-inner">
+      <div class="sec-tag" data-scroll-reveal="fade-up">❓ שאלות נפוצות</div>
+      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="80">שאלתם – ענינו</h2>
+      <div class="faq-list" data-scroll-reveal="fade-up" data-delay="160">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>הפגישה באמת בחינם? מה הסיפור?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>כן, לחלוטין. אנחנו לא גובים על הפגישה כי אנחנו מאמינים שעסק שמבין את הערך שלנו יבחר לעבוד איתנו. הפגישה היא ההוכחה שלנו. אתה לא חייב לנו כלום אחריה.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>כמה זמן לוקחת הפגישה?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>60 דקות בדיוק. אנחנו מכבדים את הזמן שלך ושלנו. בסוף 60 הדקות תצא עם תוכנית ברורה וה-PDF האסטרטגי ביד.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>הפגישה מתקיימת בזום או פגישה פיזית?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>לרוב בזום, כדי לחסוך בנסיעות ולאפשר לנו לשתף מסך ולהראות דוגמאות בזמן אמת. אם אתה מהמרכז ורוצה להיפגש פיזית – אפשר לדבר.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>מה אתם מצפים ממני בפגישה?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>להגיע עם פתיחות מלאה. אנחנו נשאל שאלות ישירות על העסק שלך, על הלקוחות שלך, על מה עבד ומה לא. ככל שתהיה גלוי יותר – הפגישה תהיה שווה יותר.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>מה קורה אחרי הפגישה?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>תקבל את ה-PDF האסטרטגי תוך 24 שעות. אחרי זה – אין לחץ. אם תרצה להמשיך לעבוד איתנו על ההפקה עצמה, נשמח. אם לא – הכלים שיצאת איתם שלך לנצח.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BOOK SECTION (pre-close + form) ══ -->
+  <section class="buy-section form-section" id="book-section">
+    <div class="section-inner">
+      <div class="pain-statements-wrap preclose-loop" data-scroll-reveal="fade-up">
+        <div class="pain-stmt pain-stmt--q">אז מה אתה מחליט?</div>
+        <div class="pain-stmt">אפשר לסגור את הדף<br/><span class="pain-dim">ולחזור לאותו תסכול.</span><br/><span class="pain-dim">לנחש, לשרוף כסף ולשגרה שלא כזה משתפרת.</span></div>
+        <div class="pain-divider"></div>
+        <div class="pain-stmt pain-stmt--verdict">או</div>
+        <div class="pain-stmt">להשקיע <span class="cyan">60 דקות</span><br/>לקבל תוכנית ברורה<br/>וסוף סוף לדעת<br/>מה הסרטונים שלך <span class="cyan">צריכים לעשות.</span></div>
+      </div>
+
+      <div class="buy-card" data-scroll-reveal="scale-up" data-delay="120">
+        <div class="fomo-social-bar">
+          <span class="fomo-dot"></span>
+          <span class="fomo-buyers"><span id="buyersCount">3</span> עסקים קבעו פגישה היום</span>
+          <span class="fomo-sep">·</span>
+          <span class="fomo-live">🔴 חי</span>
+        </div>
+        <div class="buy-badge">⚡ רק 4 פגישות פנויות השבוע – קבע עכשיו</div>
+        <h2 class="buy-title">קבע את פגישת המראה<br/>שלך עכשיו</h2>
+
+        <!-- CONTACT FORM -->
+        <div style="margin:24px 0">
+          <div class="form-group">
+            <label class="form-label" for="firstName">שם פרטי</label>
+            <input class="form-input" type="text" id="firstName" name="firstName" placeholder="שם פרטי" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lastName">שם משפחה</label>
+            <input class="form-input" type="text" id="lastName" name="lastName" placeholder="שם משפחה" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">טלפון</label>
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="05X-XXXXXXX" dir="ltr" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">מייל</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" dir="ltr" required/>
+          </div>
+          <button class="cta-btn cta-btn--buy cta-pulse form-submit" id="main-book-btn" onclick="submitBooking(event)">
+            🔥 אני רוצה לקבוע פגישת המראה!
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner footer-inner--logo-only">
+      <img src="logo.png" alt="TV Production" class="logo-img"/>
+      <p class="footer-copy" style="margin-top:12px">© 2026 TV Production | כל הזכויות שמורות</p>
+    </div>
+  </footer>
+
+</div><!-- /vsl-phase -->
+
+<script src="app.js"></script>
+<script>
+/* ── Video Carousel ── */
+(function(){
+  var track=document.getElementById('vcTrack');
+  var btnPrev=document.getElementById('vcPrev');
+  var btnNext=document.getElementById('vcNext');
+  var dotsEl=document.querySelectorAll('.video-dot');
+  if(!track)return;
+  var slides=track.querySelectorAll('.video-slide');
+  var total=slides.length;
+  var current=0;
+  function goTo(n){if(n>=total)n=0;if(n<0)n=total-1;current=n;var w=slides[0].offsetWidth;track.style.transform='translateX(-'+(current*w)+'px)';dotsEl.forEach(function(d,i){d.classList.toggle('active',i===current)});}
+  if(btnPrev)btnPrev.addEventListener('click',function(){goTo(current+1);});
+  if(btnNext)btnNext.addEventListener('click',function(){goTo(current-1);});
+  dotsEl.forEach(function(d){d.addEventListener('click',function(){goTo(parseInt(d.dataset.idx));});});
+  var startX=0;
+  track.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>40)goTo(dx>0?current-1:current+1);},{passive:true});
+  window.addEventListener('resize',function(){goTo(current);});
+})();
+
+/* ── Scarcity Counter ── */
+(function(){
+  var KEY='scarcity_count';
+  var stored=sessionStorage.getItem(KEY);
+  var count=stored?parseInt(stored,10):4;
+  var el=document.getElementById('scarcityCount');
+  if(!el)return;
+  el.textContent=count;
+  function maybeDecrement(){
+    if(count>1){
+      var delay=Math.random()*180000+120000;
+      setTimeout(function(){
+        count--;
+        sessionStorage.setItem(KEY,count);
+        el.textContent=count;
+        maybeDecrement();
+      },delay);
+    }
+  }
+  maybeDecrement();
+})();
+
+/* ── FOMO Buyers Counter ── */
+(function(){
+  var el=document.getElementById('buyersCount');
+  if(!el)return;
+  var count=3;
+  function bump(){
+    var delay=Math.random()*80000+25000;
+    setTimeout(function(){
+      count+=1;
+      el.textContent=count;
+      bump();
+    },delay);
+  }
+  bump();
+})();
+
+</script>
+</body>
+</html>
