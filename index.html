@@ -49,16 +49,20 @@
 .gift-text{font-size:14px;color:var(--white-dim);line-height:1.6}
 .gift-text strong{color:var(--white)}
 /* ── For Whom Section ── */
-.forwhom-section{padding:72px 0;background:rgba(15,15,24,0.4);border-bottom:1px solid var(--black-border)}
-.forwhom-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
-.forwhom-col{background:var(--black-card);border:1.5px solid var(--black-border);border-radius:20px;padding:24px 18px}
-.forwhom-col--yes{border-color:rgba(0,212,255,.3)}
-.forwhom-col--no{border-color:rgba(255,80,80,.2)}
-.forwhom-col-title{font-size:14px;font-weight:800;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--black-border)}
-.forwhom-col--yes .forwhom-col-title{color:var(--cyan)}
-.forwhom-col--no .forwhom-col-title{color:#ff6060}
-.forwhom-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--white-dim);line-height:1.55;margin-bottom:10px}
-.forwhom-item-icon{flex-shrink:0;font-size:14px}
+.forwhom-section{padding:80px 0;background:rgba(15,15,24,0.4);border-bottom:1px solid var(--black-border)}
+.forwhom-section .section-title { font-size: clamp(32px, 8vw, 48px); margin-bottom: 8px; }
+.forwhom-section .sec-subtitle { font-size: 18px; color: var(--white); opacity: 0.8; }
+.forwhom-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.forwhom-col{background:var(--black-card);border:2px solid var(--black-border);border-radius:24px;padding:32px 24px;position:relative;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.4)}
+.forwhom-col--yes{border-color:rgba(0,255,136,.4);background:linear-gradient(180deg, rgba(0,255,136,.04) 0%, transparent 100%)}
+.forwhom-col--no{border-color:rgba(255,80,80,.4);background:linear-gradient(180deg, rgba(255,80,80,.04) 0%, transparent 100%)}
+.forwhom-col-title{font-size:24px;font-weight:900;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08);text-align:center;letter-spacing:-0.5px}
+.forwhom-col--yes .forwhom-col-title{color:#00ff88;text-shadow:0 0 16px rgba(0,255,136,.3)}
+.forwhom-col--no .forwhom-col-title{color:#ff6060;text-shadow:0 0 16px rgba(255,96,96,.3)}
+.forwhom-item{display:flex;align-items:flex-start;gap:12px;font-size:16px;font-weight:500;color:var(--white);line-height:1.6;margin-bottom:16px}
+.forwhom-item-icon{flex-shrink:0;font-size:20px;margin-top:2px}
+.forwhom-col--yes .forwhom-item-icon{color:#00ff88;text-shadow:0 0 8px rgba(0,255,136,.4)}
+.forwhom-col--no .forwhom-item-icon{color:#ff6060;text-shadow:0 0 8px rgba(255,80,80,.4)}
 /* ── Video Testimonials Carousel ── */
 .video-testi-section{padding:60px 0 40px;background:linear-gradient(180deg,#0a0a14 0%,#06060f 100%)}
 .video-testi-heading{text-align:center;padding:0 20px;margin-bottom:32px}
@@ -462,7 +466,7 @@
   <!-- ══ FOR WHOM ══ -->
   <section class="forwhom-section">
     <div class="section-inner">
-      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="60">הפגישה הזו היא <span class="cyan">לא</span> לכולם</h2>
+      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="60">הפגישה הזו היא <span style="color:#ff6060;text-shadow:0 0 16px rgba(255,96,96,.4)">לא</span> לכולם</h2>
       <p class="sec-subtitle" data-scroll-reveal="fade-up" data-delay="100">אנחנו לא רוצים לבזבז לכם את הזמן.</p>
       <div class="forwhom-grid" data-scroll-reveal="fade-up" data-delay="140">
         <div class="forwhom-col forwhom-col--yes">

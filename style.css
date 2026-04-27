@@ -350,7 +350,7 @@ a { text-decoration: none; color: inherit; }
 
 .cta-btn--sm { font-size: 13px; padding: 10px 18px; border-radius: var(--r-md); }
 .cta-btn--hero { font-size: clamp(17px,4vw,21px); padding: 20px 36px; border-radius: var(--r-xl); width: 100%; max-width: 420px; }
-.cta-btn--buy { font-size: clamp(18px,4.5vw,22px); padding: 22px 40px; border-radius: var(--r-xl); width: 100%; display: block; }
+.cta-btn--buy { font-size: clamp(18px,4.5vw,22px); padding: 22px 40px; border-radius: var(--r-xl); width: 100%; display: flex; }
 
 @keyframes pulse { 0%,100% { box-shadow: 0 4px 24px var(--cyan-glow); } 50% { box-shadow: 0 8px 50px rgba(0,212,255,.65); } }
 .cta-pulse { animation: pulse 2.5s ease-in-out infinite; }
