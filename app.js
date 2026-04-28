@@ -338,21 +338,36 @@ async function submitBooking(event) {
   btn.style.pointerEvents = 'none';
 
   try {
-    const zapierURL = 'https://hooks.zapier.com/hooks/catch/13094095/uv1vrxp/';
-    
-    // הכנת האובייקט לשליחה בפורמט JSON
-    const payload = {
-      fullName: fName + ' ' + lName,
-      email: email,
-      phone: phone.toString() // מוודא שהטלפון נשלח כמחרוזת
-    };
+    // ⬇️ שני היעדים שאליהם שולחים במקביל ⬇️
+    const appsScriptURL = 'https://script.google.com/macros/s/AKfycbx9i2NuESAv_rQl1ftuU1VDoqgASjYNFKG2JHtS3Cx_oWXewS08-mxOT8QH6tsb5Eva/exec';
+    const zapierURL     = 'https://hooks.zapier.com/hooks/catch/13094095/uv1vrxp/';
 
-    const response = await fetch(zapierURL, {
+    // שליחה לגוגל שיטס (form data)
+    const formData = new URLSearchParams();
+    formData.append('firstName', fName);
+    formData.append('lastName', lName);
+    formData.append('phone', phone);
+    formData.append('email', email);
+
+    const sheetsRequest = fetch(appsScriptURL, {
       method: 'POST',
-      body: JSON.stringify(payload)
+      body: formData,
+      mode: 'no-cors'
     });
 
-    // למרות ש-Zapier מחזיר הצלחה, נציג למשתמש את הודעת האישור
+    // שליחה לזאפיאר (JSON)
+    const zapierRequest = fetch(zapierURL, {
+      method: 'POST',
+      body: JSON.stringify({
+        fullName: fName + ' ' + lName,
+        email: email,
+        phone: phone.toString()
+      })
+    });
+
+    // שולחים את שניהם במקביל ולא מחכים שאחד יסיים לפני השני
+    await Promise.allSettled([sheetsRequest, zapierRequest]);
+
     btn.innerHTML = '✅ תודה רבה נשלח בהצלחה!';
     btn.style.background = '#00ff88';
     btn.style.color = '#001a10';
