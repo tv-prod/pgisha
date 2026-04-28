@@ -355,14 +355,16 @@ async function submitBooking(event) {
       mode: 'no-cors'
     });
 
-    // שליחה לזאפיאר (JSON)
+    // שליחה לזאפיאר (form data עם no-cors כדי למנוע בעיות CORS בדפדפן)
+    const zapierData = new URLSearchParams();
+    zapierData.append('fullName', fName + ' ' + lName);
+    zapierData.append('email', email);
+    zapierData.append('phone', phone.toString());
+
     const zapierRequest = fetch(zapierURL, {
       method: 'POST',
-      body: JSON.stringify({
-        fullName: fName + ' ' + lName,
-        email: email,
-        phone: phone.toString()
-      })
+      body: zapierData,
+      mode: 'no-cors'
     });
 
     // שולחים את שניהם במקביל ולא מחכים שאחד יסיים לפני השני
