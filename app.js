@@ -339,7 +339,7 @@ async function submitBooking(event) {
 
   try {
     // ⬇️ הלינק שקיבלנו מגוגל שיטס ⬇️
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx7zcxPNbTCEvdtmHOKBN-Q-GDFJanlgC6cAP4-6qhwIvJUT-mgg8GzLxdLpk14wFe1/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx9i2NuESAv_rQl1ftuU1VDoqgASjYNFKG2JHtS3Cx_oWXewS08-mxOT8QH6tsb5Eva/exec';
     
     if (scriptURL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
       setTimeout(() => {
