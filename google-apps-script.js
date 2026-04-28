@@ -5,7 +5,7 @@
 // 3. מחק את כל מה שכתוב שם והדבק את הקוד הבא:
 
 const SHEET_NAME = 'גיליון1'; // חובה לוודא שזה השם המדויק של הגיליון למטה במסך (או Sheet1 באנגלית)
-const NOTIFY_EMAIL = 'tvproduction.il@gmail.com'; // המייל שלכם (שאליו תקבלו התראות על לידים)
+const NOTIFY_EMAIL = 'contact@tvprod.co.il'; // המייל שלכם (שאליו תקבלו התראות על לידים)
 
 function doPost(e) {
   try {
