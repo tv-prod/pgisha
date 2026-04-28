@@ -4,8 +4,8 @@
 // 2. בתפריט למעלה לחץ על: Extensions (הרחבות) -> Apps Script
 // 3. מחק את כל מה שכתוב שם והדבק את הקוד הבא:
 
-const SHEET_NAME = 'גיליון1'; // חובה לוודא שזה השם המדויק של הגיליון למטה במסך (או Sheet1 באנגלית)
-const NOTIFY_EMAIL = 'contact@tvprod.co.il'; // המייל שלכם (שאליו תקבלו התראות על לידים)
+const SHEET_NAME = 'LeadsPgisha'; // חובה לוודא שזה השם המדויק של הגיליון למטה במסך (או Sheet1 באנגלית)
+const NOTIFY_EMAIL = 'tv.prod10@gmail.com'; // המייל שיקבל את ההתראות המייל שלכם (שאליו תקבלו התראות על לידים)
 
 function doPost(e) {
   try {
@@ -21,8 +21,9 @@ function doPost(e) {
     // תאריך ושעה
     const date = new Date();
     
-    // הוספת השורה לטבלה. זה יכנס לפי הסדר הזה (עמודות A עד E):
-    sheet.appendRow([date, firstName, lastName, phone, email]);
+    // הוספת השורה לטבלה. זה יכנס לפי הסדר הזה:
+    // A=תאריך, B=שם, C=משפחה, D=טלפון, E=מייל, F="", G="", H="", I="no"
+    sheet.appendRow([date, firstName, lastName, phone, email, "", "", "", "no"]);
 
     // שליחת מייל התראה אליכם לתיבת הדואר
     const subject = `ליד חדש מאתר פגישת המראה! - ${firstName} ${lastName}`;
@@ -39,7 +40,7 @@ function doPost(e) {
       (הליד נשמר אוטומטית גם בגוגל שיטס שלכם)
     `;
     
-    MailApp.sendEmail(NOTIFY_EMAIL, subject, message);
+    GmailApp.sendEmail(NOTIFY_EMAIL, subject, message);
 
     return ContentService.createTextOutput(JSON.stringify({ 'result': 'success' }))
       .setMimeType(ContentService.MimeType.JSON);

@@ -338,39 +338,21 @@ async function submitBooking(event) {
   btn.style.pointerEvents = 'none';
 
   try {
-    // ⬇️ הלינק שקיבלנו מגוגל שיטס ⬇️
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx9i2NuESAv_rQl1ftuU1VDoqgASjYNFKG2JHtS3Cx_oWXewS08-mxOT8QH6tsb5Eva/exec';
+    const zapierURL = 'https://hooks.zapier.com/hooks/catch/13094095/uv1vrxp/';
     
-    if (scriptURL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
-      setTimeout(() => {
-        btn.innerHTML = '✅ תודה רבה נשלח בהצלחה!';
-        btn.style.background = '#00ff88';
-        btn.style.color = '#001a10';
-        btn.style.boxShadow = 'none';
-        
-        if (!document.getElementById('success-sub-msg')) {
-          const subMsg = document.createElement('div');
-          subMsg.id = 'success-sub-msg';
-          subMsg.className = 'success-msg-sub';
-          subMsg.innerHTML = 'ניצור קשר בקרוב.';
-          btn.parentNode.insertBefore(subMsg, btn.nextSibling);
-        }
-      }, 1200);
-      return;
-    }
+    // הכנת האובייקט לשליחה בפורמט JSON
+    const payload = {
+      fullName: fName + ' ' + lName,
+      email: email,
+      phone: phone.toString() // מוודא שהטלפון נשלח כמחרוזת
+    };
 
-    const formData = new URLSearchParams();
-    formData.append('firstName', fName);
-    formData.append('lastName', lName);
-    formData.append('phone', phone);
-    formData.append('email', email);
-
-    const response = await fetch(scriptURL, {
+    const response = await fetch(zapierURL, {
       method: 'POST',
-      body: formData,
-      mode: 'no-cors'
+      body: JSON.stringify(payload)
     });
 
+    // למרות ש-Zapier מחזיר הצלחה, נציג למשתמש את הודעת האישור
     btn.innerHTML = '✅ תודה רבה נשלח בהצלחה!';
     btn.style.background = '#00ff88';
     btn.style.color = '#001a10';
