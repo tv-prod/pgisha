@@ -326,8 +326,9 @@ async function submitBooking(event) {
   const lName = document.getElementById('lastName').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const email = document.getElementById('email').value.trim();
+  const businessName = document.getElementById('businessName').value.trim();
 
-  if (!fName || !lName || !phone || !email) {
+  if (!fName || !lName || !phone || !email || !businessName) {
     alert('אנא מלא את כל השדות כדי שנוכל לחזור אליך.');
     return;
   }
@@ -339,7 +340,7 @@ async function submitBooking(event) {
 
   try {
     // ⬇️ שני היעדים שאליהם שולחים במקביל ⬇️
-    const appsScriptURL = 'https://script.google.com/macros/s/AKfycbx9i2NuESAv_rQl1ftuU1VDoqgASjYNFKG2JHtS3Cx_oWXewS08-mxOT8QH6tsb5Eva/exec';
+    const appsScriptURL = 'https://script.google.com/macros/s/AKfycbzb4QBqpWN9HqK-gwrUqyoxNHGOVHdZoBv0bn5WFybKpwcfdCuPZodtjE7FtVWNU_jf/exec';
     const zapierURL     = 'https://hooks.zapier.com/hooks/catch/13094095/uv1vrxp/';
 
     // שליחה לגוגל שיטס (form data)
@@ -348,6 +349,7 @@ async function submitBooking(event) {
     formData.append('lastName', lName);
     formData.append('phone', phone);
     formData.append('email', email);
+    formData.append('businessName', businessName);
 
     const sheetsRequest = fetch(appsScriptURL, {
       method: 'POST',
@@ -388,6 +390,7 @@ async function submitBooking(event) {
     document.getElementById('lastName').value = '';
     document.getElementById('phone').value = '';
     document.getElementById('email').value = '';
+    document.getElementById('businessName').value = '';
 
   } catch (error) {
     console.error('Error!', error.message);

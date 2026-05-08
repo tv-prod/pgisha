@@ -94,7 +94,7 @@
 .press-inner{padding:0 24px;position:relative;z-index:2}
 .press-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);color:#00d4ff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:20px;letter-spacing:.5px;text-transform:uppercase}
 .press-headline{font-size:clamp(2rem,8vw,2.8rem);font-weight:900;color:#fff;margin:0 0 6px;line-height:1.15}
-.press-headline span{background:linear-gradient(90deg,#00d4ff,#0099cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.press-headline span{color:var(--cyan);text-shadow:0 0 28px rgba(0,212,255,.3)}
 .press-subhead{font-size:16px;color:rgba(255,255,255,.6);margin:0 0 28px;font-weight:400}
 .press-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0e3a6e,#1a6abf);color:#fff;font-size:16px;font-weight:700;padding:14px 30px;border-radius:100px;text-decoration:none;box-shadow:0 4px 24px rgba(0,150,255,.35);transition:transform .2s,box-shadow .2s;margin-bottom:40px}
 .press-cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,150,255,.55)}
@@ -374,17 +374,17 @@
   <section class="logos-section" id="logos-section">
     <div class="logos-label">עבדנו עם מאות עסקים, אלו חלקם</div>
     <div class="logos-grid">
-      <div class="logo-item"><img src="logo-client-01.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-02.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-03.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-04.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-05.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-06.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-07.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-08.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-09.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-10.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-      <div class="logo-item"><img src="logo-client-11.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-01.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-02.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-03.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-04.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-05.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-06.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-07.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-08.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-09.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-10.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+        <div class="logo-item"><img src="logo-client-11.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
     </div>
   </section>
   <!-- ══ PAIN LOOP ══ -->
@@ -645,7 +645,6 @@
           <span class="fomo-sep">·</span>
           <span class="fomo-live">🔴 חי</span>
         </div>
-        <div class="buy-badge">⚡ רק 4 פגישות פנויות השבוע – קבע עכשיו</div>
         <h2 class="buy-title">קבע את פגישת המראה<br/>שלך עכשיו</h2>
 
         <!-- CONTACT FORM -->
@@ -665,6 +664,10 @@
           <div class="form-group">
             <label class="form-label" for="email">מייל</label>
             <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" dir="ltr" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="businessName">שם העסק</label>
+            <input class="form-input" type="text" id="businessName" name="businessName" placeholder="שם העסק שלך" required/>
           </div>
           <button class="cta-btn cta-btn--buy cta-pulse form-submit" id="main-book-btn" onclick="submitBooking(event)">
             🔥 אני רוצה לקבוע פגישת המראה!

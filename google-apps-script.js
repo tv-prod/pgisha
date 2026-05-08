@@ -13,17 +13,18 @@ function doPost(e) {
     if (!sheet) throw new Error("גיליון לא נמצא - ודא ששם הגיליון נכון בקוד");
 
     // קריאת השדות שנשלחו מהטופס
-    const firstName = e.parameter.firstName || '';
-    const lastName = e.parameter.lastName || '';
-    const phone = e.parameter.phone || '';
-    const email = e.parameter.email || '';
-    
+    const firstName    = e.parameter.firstName    || '';
+    const lastName     = e.parameter.lastName     || '';
+    const email        = e.parameter.email        || '';
+    const phone        = e.parameter.phone        || '';
+    const businessName = e.parameter.businessName || '';
+
     // תאריך ושעה
     const date = new Date();
-    
-    // הוספת השורה לטבלה. זה יכנס לפי הסדר הזה:
-    // A=תאריך, B=שם, C=משפחה, D=טלפון, E=מייל, F="", G="", H="", I="no"
-    sheet.appendRow([date, firstName, lastName, phone, email, "", "", "", "no"]);
+
+    // הוספת השורה לטבלה לפי הסדר המבוקש:
+    // A=תאריך, B=שם פרטי, C=שם משפחה, D=מייל, E=טלפון, F=שם עסק, G="", H="", I="no"
+    sheet.appendRow([date, firstName, lastName, email, phone, businessName, "", "", "no"]);
 
     // שליחת מייל התראה אליכם לתיבת הדואר
     const subject = `ליד חדש מאתר פגישת המראה! - ${firstName} ${lastName}`;
@@ -34,12 +35,13 @@ function doPost(e) {
       שם מלא: ${firstName} ${lastName}
       טלפון: ${phone}
       מייל: ${email}
+      שם עסק: ${businessName}
       
       נשלח בתאריך: ${date.toLocaleString('he-IL')}
       
       (הליד נשמר אוטומטית גם בגוגל שיטס שלכם)
     `;
-    
+
     GmailApp.sendEmail(NOTIFY_EMAIL, subject, message);
 
     return ContentService.createTextOutput(JSON.stringify({ 'result': 'success' }))
@@ -58,4 +60,4 @@ function doPost(e) {
 // 8. תחת "Who has access" שנה ל- "Anyone" (חשוב מאוד!)
 // 9. לחץ Deploy וייפתח לך חלון אישור גישה (Authorize Access - עקוב אחרי ההוראות ואשר את חשבון הגוגל שלך)
 // 10. בסוף תקבל לינק "Web app URL" שמתחיל ב- https://script.google.com/macros/... 
-// 11. העתק את הלינק הזה, והדבק אותו בקובץ app.js שלנו בשורה 302 במקום YOUR_GOOGLE_SCRIPT_URL_HERE!
+// 11. העתק את הלינק הזה, והדבק אותו בקובץ app.js שלנו בשורה 342 במקום הלינק הקיים!
