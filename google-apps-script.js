@@ -13,10 +13,10 @@ function doPost(e) {
     if (!sheet) throw new Error("גיליון לא נמצא - ודא ששם הגיליון נכון בקוד");
 
     // קריאת השדות שנשלחו מהטופס
-    const firstName    = e.parameter.firstName    || '';
-    const lastName     = e.parameter.lastName     || '';
-    const email        = e.parameter.email        || '';
-    const phone        = e.parameter.phone        || '';
+    const firstName = e.parameter.firstName || '';
+    const lastName = e.parameter.lastName || '';
+    const email = e.parameter.email || '';
+    const phone = e.parameter.phone || '';
     const businessName = e.parameter.businessName || '';
 
     // תאריך ושעה
