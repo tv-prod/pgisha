@@ -122,11 +122,20 @@
 .cinema-card--tal .cinema-name{color:#a78bfa}
 .cinema-role{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px}
 @media(max-width:480px){.forwhom-grid{grid-template-columns:1fr}.ig-grid{grid-template-columns:repeat(3,1fr)}}
-.ig-widget-container a[href*="elfsight"], .eapps-link, .eapps-instagram-feed-header {
-  position: absolute !important;
-  left: -9999px !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
+/* כיסוי ווטרמארק Elfsight — ללא נגיעה ב-DOM שלהם */
+.ig-widget-container {
+  position: relative;
+}
+.ig-widget-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background: #07070f; /* אותו צבע רקע כמו ה-ig-section */
+  z-index: 9999;
+  pointer-events: none;
 }
 
 /* ── Success Message Animation ── */
