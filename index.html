@@ -24,7 +24,7 @@
 .form-card::before{content:'';position:absolute;top:-60%;left:-30%;width:160%;height:160%;background:radial-gradient(ellipse at 50% 0%,rgba(0,212,255,.07) 0%,transparent 65%);pointer-events:none}
 .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;text-align:right}
 .form-label{font-size:13px;font-weight:600;color:rgba(168,168,192,.8)}
-.form-input{background:rgba(255,255,255,.05);border:1.5px solid rgba(0,212,255,.2);border-radius:12px;padding:14px 16px;color:#fff;font-family:'Heebo',sans-serif;font-size:15px;font-weight:500;width:100%;transition:border-color .2s}
+.form-input{background:rgba(255,255,255,.05);border:1.5px solid rgba(0,212,255,.2);border-radius:12px;padding:14px 16px;color:#fff;font-family:'Heebo',sans-serif;font-size:16px;font-weight:500;width:100%;transition:border-color .2s}
 .form-input:focus{outline:none;border-color:var(--cyan);background:rgba(0,212,255,.05)}
 .form-input::placeholder{color:rgba(168,168,192,.4)}
 .form-submit{margin-top:8px}
@@ -122,9 +122,12 @@
 .cinema-card--tal .cinema-name{color:#a78bfa}
 .cinema-role{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px}
 @media(max-width:480px){.forwhom-grid{grid-template-columns:1fr}.ig-grid{grid-template-columns:repeat(3,1fr)}}
-.ig-widget-container a[href*="elfsight"] { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
-.eapps-link { display: none !important; }
-.eapps-instagram-feed-header { display: none !important; }
+.ig-widget-container a[href*="elfsight"], .eapps-link, .eapps-instagram-feed-header {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
 /* ── Success Message Animation ── */
 .success-msg-sub {

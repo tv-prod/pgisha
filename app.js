@@ -291,32 +291,11 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ── Aggressive Elfsight Branding Removal ────────────────────
-(function() {
-  function removeElfsightBranding(root) {
-    if (!root) return;
-    // Remove in light DOM or within shadow root
-    const badLinks = root.querySelectorAll('a[href*="elfsight.com"], .eapps-link, [class*="eapps-instagram-feed-title"]');
-    badLinks.forEach(el => el.remove());
-  }
+// ── Aggressive Elfsight Branding Removal (DISABLED) ─────────────
+// The aggressive removal of DOM elements triggers Elfsight's anti-tampering
+// scripts to reload the page when the widget is lazy-loaded on scroll.
+// We now rely solely on safe CSS hiding to prevent the page from resetting.
 
-  const observer = new MutationObserver(mutations => {
-    // Check main document
-    removeElfsightBranding(document);
-    // Check inside any Elfsight app containers that might have shadow DOM
-    const widgetWrappers = document.querySelectorAll('[class*="elfsight-app"]');
-    widgetWrappers.forEach(wrap => {
-      if (wrap.shadowRoot) removeElfsightBranding(wrap.shadowRoot);
-    });
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-
-  // Initial check
-  setTimeout(() => removeElfsightBranding(document), 1000);
-  setTimeout(() => removeElfsightBranding(document), 3000);
-  setTimeout(() => removeElfsightBranding(document), 5000);
-})();
 
 // ── Form Submission ─────────────────────────────────────────
 async function submitBooking(event) {
