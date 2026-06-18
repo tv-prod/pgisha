@@ -728,30 +728,23 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
   var total=slides.length;
   var current=0;
 
-  // טוען iframe רק כשהשקופית פעילה, ומפנה כשלא
+  // טוען iframe רק פעם אחת כשהשקופית הופכת פעילה
   function loadSlide(n){
     var iframe=slides[n].querySelector('iframe');
-    if(!iframe)return;
-    if(!iframe.src && iframe.dataset.src){
+    if(!iframe||iframe.dataset.loaded==='true')return;
+    if(iframe.dataset.src){
       iframe.src=iframe.dataset.src;
+      iframe.dataset.loaded='true';
     }
-  }
-  function unloadSlide(n){
-    var iframe=slides[n].querySelector('iframe');
-    if(!iframe||!iframe.src)return;
-    iframe.src='';
   }
 
   function goTo(n){
     if(n>=total)n=0;
     if(n<0)n=total-1;
-    // פרוק את הישן
-    unloadSlide(current);
     current=n;
     var w=slides[0].offsetWidth;
     track.style.transform='translateX(-'+(current*w)+'px)';
     dotsEl.forEach(function(d,i){d.classList.toggle('active',i===current);});
-    // טען את החדש
     loadSlide(current);
   }
 
@@ -777,13 +770,14 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
     var dx=e.changedTouches[0].clientX-startX;
     var dy=e.changedTouches[0].clientY-startY;
     // רק אם הסוויפ יותר אופקי מאנכי
-    if(Math.abs(dx)>Math.abs(dy) && Math.abs(dx)>40){
+    if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40){
       goTo(dx>0?current-1:current+1);
     }
   },{passive:true});
 
   window.addEventListener('resize',function(){goTo(current);});
 })();
+
 
 
 /* ── Scarcity Counter ── */
