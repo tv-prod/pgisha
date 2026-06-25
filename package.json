@@ -1,0 +1,16 @@
+{
+  "name": "pgisha",
+  "version": "1.0.0",
+  "description": "TV Production landing page with Vercel Web Analytics",
+  "private": true,
+  "scripts": {
+    "dev": "python -m http.server 8000 || python3 -m http.server 8000",
+    "lint": "echo 'No linter configured for static HTML project'"
+  },
+  "keywords": ["landing-page", "analytics"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
