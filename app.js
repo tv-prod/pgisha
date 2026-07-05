@@ -317,6 +317,12 @@ async function submitBooking(event) {
   btn.style.opacity = '0.8';
   btn.style.pointerEvents = 'none';
 
+  // שולחים אירוע Lead לפיקסל מיד — לפני ההמתנה לשרתים
+  // כך מבטיחים שהפיקסל תמיד יספור את הליד, גם אם הרשת איטית
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'Lead');
+  }
+
   try {
     // ⬇️ שני היעדים שאליהם שולחים במקביל ⬇️
     const appsScriptURL = 'https://script.google.com/macros/s/AKfycbzb4QBqpWN9HqK-gwrUqyoxNHGOVHdZoBv0bn5WFybKpwcfdCuPZodtjE7FtVWNU_jf/exec';
@@ -350,11 +356,6 @@ async function submitBooking(event) {
 
     // שולחים את שניהם במקביל ולא מחכים שאחד יסיים לפני השני
     await Promise.allSettled([sheetsRequest, zapierRequest]);
-
-    // שליחת אירוע Lead לפיקסל לאחר שליחת טופס בהצלחה (דף תודה דינמי)
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'Lead');
-    }
 
     btn.innerHTML = '✅ תודה רבה נשלח בהצלחה!';
     btn.style.background = '#00ff88';
