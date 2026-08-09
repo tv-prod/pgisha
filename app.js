@@ -2,7 +2,7 @@
 
 // ── Quiz State ─────────────────────────────────────────────
 let currentQuestion = 1;
-const totalQuestions = 5;
+const totalQuestions = 3;
 
 let quizPhase, loadingScreen, vslPhase, progressBar, stepLabel, loadingFill, stickyCta;
 

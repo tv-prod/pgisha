@@ -104,13 +104,18 @@
 .press-img-wrap:last-child{transform:rotate(6deg) translateX(-20px);z-index:1}
 .press-img-wrap:hover{transform:rotate(0deg) scale(1.04) !important;z-index:5}
 .press-img-wrap img{width:100%;display:block}
-/* ── Logos Section ── */
-.logos-section{padding:56px 40px;background:linear-gradient(180deg,#07070f 0%,#0d0d1a 100%);position:relative}
+/* ── Client Logos Carousel ── */
+.logos-section{padding:56px 20px;background:linear-gradient(180deg,#07070f 0%,#0d0d1a 100%);position:relative}
 .logos-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:36px}
-.logos-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:32px 48px;max-width:900px;margin:0 auto}
-.logo-item{display:flex;align-items:center;justify-content:center;opacity:.45;transition:opacity .3s ease}
-.logo-item:hover{opacity:.85}
-.logo-item img{height:46px;width:auto;max-width:160px;object-fit:contain;display:block;filter:brightness(0) invert(1)}
+.logos-carousel-wrapper{display:flex;align-items:center;gap:8px;width:100%;max-width:860px;margin:0 auto;direction:ltr}
+.logos-track-container{overflow:hidden;flex:1;-webkit-mask-image:linear-gradient(90deg,transparent 0%,black 10%,black 90%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,black 10%,black 90%,transparent 100%)}
+.logos-track{display:flex;align-items:center;width:max-content;will-change:transform}
+.logo-item{flex-shrink:0;padding:0 20px;display:flex;align-items:center;justify-content:center;min-width:80px}
+.logo-item img{max-height:56px;max-width:160px;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.45;transition:opacity .3s;display:block}
+.logo-item.tall img{max-height:80px}
+.logo-item img:hover{opacity:.85}
+.logo-nav-btn{width:38px;height:38px;border-radius:50%;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);color:#00d4ff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0;line-height:1}
+.logo-nav-btn:hover{background:rgba(0,212,255,.2)}
 /* ── Cinema Cards (About) ── */
 .founders-cinema{display:flex;gap:0;justify-content:center;margin:28px 0;flex-wrap:wrap}
 .cinema-card{position:relative;width:50%;max-width:320px;overflow:hidden;cursor:pointer}
@@ -252,7 +257,7 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
   <div class="quiz-header">
     <div class="quiz-logo"><img src="logo.png" alt="TV Production" class="logo-img logo-img--sm"/></div>
     <div class="quiz-progress-wrap"><div class="quiz-progress-bar" id="quizProgressBar"></div></div>
-    <div class="quiz-step-label" id="quizStepLabel">שאלה 1 מתוך 5</div>
+    <div class="quiz-step-label" id="quizStepLabel">שאלה 1 מתוך 3</div>
   </div>
   <div class="quiz-body">
 
@@ -260,54 +265,29 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
       <div class="q-num">01</div>
       <h2 class="q-title">מה הסרטונים שלך כרגע מביאים לעסק?</h2>
       <div class="quiz-options">
-        <button class="quiz-option" onclick="selectOption(this,1)"><span class="opt-emoji">📞</span><span>פניות ועסקאות - הסרטונים עובדים בשבילי</span></button>
+        <button class="quiz-option" onclick="selectOption(this,1)"><span class="opt-emoji">📞</span><span>פניות ועסקאות – הסרטונים עובדים בשבילי</span></button>
         <button class="quiz-option" onclick="selectOption(this,1)"><span class="opt-emoji">❤️</span><span>לייקים ושיתופים, אבל לא פניות אמיתיות</span></button>
         <button class="quiz-option" onclick="selectOption(this,1)"><span class="opt-emoji">🤷</span><span>כמעט כלום – הסרטונים נשכחים אחרי יום</span></button>
-        <button class="quiz-option" onclick="selectOption(this,1)"><span class="opt-emoji">🎬</span><span>עדיין לא עשיתי סרטונים בכלל</span></button>
       </div>
     </div>
 
     <div class="quiz-question" id="q2">
       <div class="q-num">02</div>
-      <h2 class="q-title">אתה מעלה את הסרטונים לפי אסטרטגיה מוגדרת?</h2>
+      <h2 class="q-title">אתה מעלה סרטונים לפי אסטרטגיה מוגדרת?</h2>
       <div class="quiz-options">
-        <button class="quiz-option" onclick="selectOption(this,2)"><span class="opt-emoji">✅</span><span>גורמים ללקוחות לפנות אלי - עוזרים לי במכירות!</span></button>
+        <button class="quiz-option" onclick="selectOption(this,2)"><span class="opt-emoji">✅</span><span>כן, יש לי תוכנית ברורה</span></button>
         <button class="quiz-option" onclick="selectOption(this,2)"><span class="opt-emoji">🎲</span><span>ניסוי וטעייה – מעלה ומקווה לטוב</span></button>
         <button class="quiz-option" onclick="selectOption(this,2)"><span class="opt-emoji">❌</span><span>אין לי שום אסטרטגיה</span></button>
-        <button class="quiz-option" onclick="selectOption(this,2)"><span class="opt-emoji">🤔</span><span>יש משהו בראש אבל לא מסודר</span></button>
       </div>
     </div>
 
     <div class="quiz-question" id="q3">
       <div class="q-num">03</div>
-      <h2 class="q-title">מה קורה לסרטונים שלך אחרי ההעלאה?</h2>
-      <div class="quiz-options">
-        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">⚙️</span><span>גורמים ללקוחות לפנות אלי - עוזרים לי במכירות!</span></button>
-        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">💀</span><span>נשכחים בגלריה ולא מביאים כלום</span></button>
-        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">📉</span><span>טובים ל-24 שעות ואז שקט...</span></button>
-        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">💭</span><span>אף פעם לא חשבתי על זה</span></button>
-      </div>
-    </div>
-
-    <div class="quiz-question" id="q4">
-      <div class="q-num">04</div>
-      <h2 class="q-title">מה מצב הקמפיינים בממומן שלך כרגע?</h2>
-      <div class="quiz-options">
-        <button class="quiz-option" onclick="selectOption(this,4)"><span class="opt-emoji">🚀</span><span>מריץ ויש תוצאות – אבל רוצה יותר</span></button>
-        <button class="quiz-option" onclick="selectOption(this,4)"><span class="opt-emoji">🔥</span><span>מריץ אבל שורף כסף בלי תוצאות</span></button>
-        <button class="quiz-option" onclick="selectOption(this,4)"><span class="opt-emoji">⏸️</span><span>עדיין לא התחלתי – פוחד לבזבז</span></button>
-        <button class="quiz-option" onclick="selectOption(this,4)"><span class="opt-emoji">😤</span><span>נשרפתי בעבר ולא רוצה לנסות שוב</span></button>
-      </div>
-    </div>
-
-    <div class="quiz-question" id="q5">
-      <div class="q-num">05</div>
       <h2 class="q-title">מה הכי מעצבן אותך עכשיו?</h2>
       <div class="quiz-options">
-        <button class="quiz-option quiz-option--yes" onclick="selectOption(this,5)"><span class="opt-emoji">😤</span><span>הפער בין מה שאני שווה לבין איך שאני נראה על המסך</span></button>
-        <button class="quiz-option" onclick="selectOption(this,5)"><span class="opt-emoji">👀</span><span>מתחרים גרועים ממני עוקפים אותי בסיבוב</span></button>
-        <button class="quiz-option" onclick="selectOption(this,5)"><span class="opt-emoji">💸</span><span>שורף כסף על תוכן שלא עושה כלום</span></button>
-        <button class="quiz-option" onclick="selectOption(this,5)"><span class="opt-emoji">🤯</span><span>לא יודע מאיפה להתחיל</span></button>
+        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">😤</span><span>הפער בין מה שאני שווה לבין איך שאני נראה על המסך</span></button>
+        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">👀</span><span>מתחרים גרועים ממני עוקפים אותי בסיבוב</span></button>
+        <button class="quiz-option" onclick="selectOption(this,3)"><span class="opt-emoji">💸</span><span>שורף כסף על תוכן שלא עושה כלום</span></button>
       </div>
     </div>
 
@@ -400,19 +380,37 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
 
   <!-- ══ CLIENT LOGOS ══ -->
   <section class="logos-section" id="logos-section">
-    <div class="logos-label">עבדנו עם מאות עסקים, אלו חלקם</div>
-    <div class="logos-grid">
-        <div class="logo-item"><img src="logo-client-01.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-02.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-03.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-04.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-05.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-06.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-07.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-08.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-09.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-10.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
-        <div class="logo-item"><img src="logo-client-11.png" alt="" onerror="this.parentElement.style.display='none'"/></div>
+    <div class="logos-label">עסקים שכבר עובדים איתנו</div>
+    <div class="logos-carousel-wrapper">
+      <button class="logo-nav-btn" onclick="logoNavBtn(-1)" aria-label="הקודם">&#8249;</button>
+      <div class="logos-track-container" id="logosContainer">
+        <div class="logos-track" id="logosTrack">
+          <div class="logo-item"><img src="logo clients/logo-client-01.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-02.png" alt=""></div>
+          <div class="logo-item tall"><img src="logo clients/logo-client-03.png" alt=""></div>
+          <div class="logo-item tall"><img src="logo clients/logo-client-04.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-05.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-06.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-07.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-08.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-09.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-10.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-11.png" alt=""></div>
+          <!-- Duplicate for seamless loop -->
+          <div class="logo-item"><img src="logo clients/logo-client-01.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-02.png" alt=""></div>
+          <div class="logo-item tall"><img src="logo clients/logo-client-03.png" alt=""></div>
+          <div class="logo-item tall"><img src="logo clients/logo-client-04.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-05.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-06.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-07.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-08.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-09.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-10.png" alt=""></div>
+          <div class="logo-item"><img src="logo clients/logo-client-11.png" alt=""></div>
+        </div>
+      </div>
+      <button class="logo-nav-btn" onclick="logoNavBtn(1)" aria-label="הבא">&#8250;</button>
     </div>
   </section>
   <!-- ══ PAIN LOOP ══ -->
@@ -462,36 +460,8 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
       </div>
     </div>
   </section>
-
-  <!-- ══ THE GIFT ══ -->
-  <section class="gift-section">
-    <div class="section-inner">
-      <div class="sec-tag" data-scroll-reveal="fade-up">🎁 מה מקבלים בסוף הפגישה</div>
-      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="60">לא רק שיחה —<br/><span class="cyan">מסמך אסטרטגיה מעוצב מסודר וממוקד</span></h2>
-      <p class="sec-subtitle" data-scroll-reveal="fade-up" data-delay="100">בסיום כל פגישת המראה תקבל מסמך מוכן לפעולה</p>
-      <div class="gift-card" data-scroll-reveal="fade-up" data-delay="140">
-        <div class="gift-items">
-          <div class="gift-item">
-            <span class="gift-icon">📋</span>
-            <div class="gift-text"><strong>סיכום מלא של הפגישה</strong><br/>כל מה שדיברנו, כל החלטה, כל תובנה – מסודרים בצורה ברורה.</div>
-          </div>
-          <div class="gift-item">
-            <span class="gift-icon">🗺️</span>
-            <div class="gift-text"><strong>Roadmap וידאו מותאם אישית</strong><br/>מפת דרכים ספציפית לעסק שלך – אילו סרטונים לעשות קודם ולמה.</div>
-          </div>
-          <div class="gift-item">
-            <span class="gift-icon">📣</span>
-            <div class="gift-text"><strong>אסטרטגיית ממומן ראשונית</strong><br/>איך הממומן שלך הולך להיראות ואיך להפוך פניות קרות ללקוחות חמים.</div>
-          </div>
-          <div class="gift-item">
-            <span class="gift-icon">⚡</span>
-            <div class="gift-text"><strong>רשימת משימות למחר בבוקר</strong><br/>לא תצא עם "מחשבות". תצא עם פעולות ספציפיות שאתה יכול לבצע מחר.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- ══ FOR WHOM ══ -->
+
   <section class="forwhom-section">
     <div class="section-inner">
       <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="60">הפגישה הזו היא <span style="color:#ff6060;text-shadow:0 0 16px rgba(255,96,96,.4)">לא</span> לכולם</h2>
@@ -817,6 +787,69 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
   }
   bump();
 })();
+
+/* ── Logos Carousel (auto-scroll + nav) ── */
+(function(){
+  var _logoPos=0, _logoPaused=false, _logoRaf=null, _logoSingleWidth=0;
+
+  function initLogosCarousel(){
+    var track=document.getElementById('logosTrack');
+    var container=document.getElementById('logosContainer');
+    if(!track||!container)return;
+    if(_logoRaf)cancelAnimationFrame(_logoRaf);
+
+    // מחשבים רוחב אחרי רנדור
+    requestAnimationFrame(function(){
+      _logoSingleWidth=track.scrollWidth/2;
+      _logoPos=0;
+      function tick(){
+        if(!_logoPaused){
+          _logoPos+=0.5;
+          if(_logoPos>=_logoSingleWidth)_logoPos=0;
+          track.style.transform='translateX(-'+_logoPos+'px)';
+        }
+        _logoRaf=requestAnimationFrame(tick);
+      }
+      tick();
+    });
+
+    container.addEventListener('mouseenter',function(){_logoPaused=true;});
+    container.addEventListener('mouseleave',function(){_logoPaused=false;});
+  }
+
+  window.logoNavBtn=function(dir){
+    _logoPaused=true;
+    _logoPos+=dir*150;
+    if(_logoPos<0)_logoPos=_logoSingleWidth+_logoPos;
+    if(_logoPos>=_logoSingleWidth)_logoPos=_logoPos-_logoSingleWidth;
+    var track=document.getElementById('logosTrack');
+    if(!track)return;
+    track.style.transition='transform 0.35s ease';
+    track.style.transform='translateX(-'+_logoPos+'px)';
+    setTimeout(function(){
+      track.style.transition='';
+      _logoPaused=false;
+    },360);
+  };
+
+  // מחכה שה-vsl-phase יהפוך גלוי (יאבד את class="hidden")
+  var vslEl=document.getElementById('vsl-phase');
+  if(!vslEl)return;
+
+  var observer=new MutationObserver(function(mutations){
+    mutations.forEach(function(m){
+      if(m.attributeName==='class'&&!vslEl.classList.contains('hidden')){
+        observer.disconnect();
+        // נותן פריים אחד לדפדפן לרנדר לפני שמחשבים
+        setTimeout(initLogosCarousel,100);
+      }
+    });
+  });
+  observer.observe(vslEl,{attributes:true});
+
+})();
+
+
 
 </script>
 </body>
