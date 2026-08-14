@@ -56,6 +56,13 @@
 .forwhom-col{background:var(--black-card);border:2px solid var(--black-border);border-radius:24px;padding:32px 24px;position:relative;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.4)}
 .forwhom-col--yes{border-color:rgba(0,255,136,.4);background:linear-gradient(180deg, rgba(0,255,136,.04) 0%, transparent 100%)}
 .forwhom-col--no{border-color:rgba(255,80,80,.4);background:linear-gradient(180deg, rgba(255,80,80,.04) 0%, transparent 100%)}
+/* ── About Stats / Trust Row ── */
+.trust-row{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08);padding-top:40px;width:100%;max-width:640px;margin-top:32px}
+.trust-item{flex:1;min-width:120px;text-align:center;padding:0 24px}
+.trust-item:not(:last-child){border-left:1px solid rgba(255,255,255,.08)}
+.trust-num{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0096ff,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px}
+.trust-label{font-size:13px;color:rgba(255,255,255,.45);font-weight:600}
+@media(max-width:480px){.trust-item{min-width:100px;padding:0 12px}.trust-num{font-size:28px}}
 .forwhom-col-title{font-size:24px;font-weight:900;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08);text-align:center;letter-spacing:-0.5px}
 .forwhom-col--yes .forwhom-col-title{color:#00ff88;text-shadow:0 0 16px rgba(0,255,136,.3)}
 .forwhom-col--no .forwhom-col-title{color:#ff6060;text-shadow:0 0 16px rgba(255,96,96,.3)}
@@ -309,15 +316,7 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
 
   <nav class="vsl-nav"><img src="logo.png" alt="TV Production" class="logo-img"/></nav>
 
-  <!-- Scarcity Bar -->
-  <div class="scarcity-bar" id="scarcityBar">
-    <div class="scarcity-inner">
-      <span class="scarcity-dot"></span>
-      <span class="scarcity-text">⚡ הזמן שלכם יקר - אל תבזבזו אותו על ניסוי וטעייה</span>
-      <span style="color:rgba(212,255,232,.5);font-size:13px">·</span>
-      <a href="#book-section" class="cta-btn cta-btn--sm" style="padding:8px 16px;font-size:12px">קבע עכשיו ←</a>
-    </div>
-  </div>
+
 
   <!-- Sticky CTA -->
   <div class="sticky-cta" id="stickyCta">
@@ -338,10 +337,7 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
         סרטון אחד לא יציל<br/>את העסק שלך —<br/>
         <span class="hero-accent">אסטרטגיה של סרטונים<br/>בעלי מטרות כן.</span>
       </h1>
-      <p class="hero-sub" data-scroll-reveal="fade-up" data-delay="180">
-        בפגישת ההמראה נבנה לך <strong>מסלול צפייה חכם</strong> שהופך זרים ללקוחות:<br/>
-        <strong>היכרות ← אמון ← פנייה חמה.</strong>
-      </p>
+
       <div class="vsl-video-wrap" data-scroll-reveal="scale-up" data-delay="260">
         <div class="vsl-video-inner">
           <div class="vsl-glow" style="z-index:-1;"></div>
@@ -355,13 +351,7 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
         <a href="#book-section" class="cta-btn cta-btn--hero cta-pulse">🔥 אני רוצה לקבוע פגישת המראה!</a>
         <span class="urgency-micro">✓ ללא עלות · ✓ 60 דקות · ✓ ללא התחייבות</span>
       </div>
-      <div class="hero-stats" data-scroll-reveal="fade-up" data-delay="440">
-        <div class="hstat"><span class="hstat-num counter" data-target="150">0</span><span class="hstat-num-plus">+</span><span class="hstat-sub">עסקים</span></div>
-        <div class="hstat-div"></div>
-        <div class="hstat"><span class="hstat-num counter" data-target="7">0</span><span class="hstat-num-plus">+</span><span class="hstat-sub">שנות ניסיון</span></div>
-        <div class="hstat-div"></div>
-        <div class="hstat"><span class="hstat-num">⭐ 4.9</span><span class="hstat-sub">דירוג ממוצע</span></div>
-      </div>
+
     </div>
   </section>
 
@@ -430,36 +420,7 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
     </div>
   </section>
 
-  <!-- ══ SOLUTION – 5 שלבים ══ -->
-  <section class="solution-section">
-    <div class="section-inner solution-centered">
-      <div class="sec-tag" data-scroll-reveal="fade-up">🗺️ מה קורה בפגישה</div>
-      <h2 class="section-title sol-title-big" data-scroll-reveal="fade-up" data-delay="60">5 שלבי <span class="cyan">פגישת המראה</span></h2>
-      <p class="sec-subtitle" data-scroll-reveal="fade-up" data-delay="100">60 דקות שמשנות את כל הגישה לוידאו שיווקי</p>
-      <div class="sol-feature-list" data-scroll-reveal="fade-up" data-delay="140">
-        <div class="sol-feat">
-          <span class="sol-feat-num">01</span>
-          <span class="sol-feat-text"><strong style="color:#fff">🎯 אבחון ופיצוח מטרות</strong><br/>מגדירים תפקיד לכל סרטון במסע הלקוח – מי מהם לחשיפה, מי לאמון, ומי לסגירת עסקה.</span>
-        </div>
-        <div class="sol-feat">
-          <span class="sol-feat-num">02</span>
-          <span class="sol-feat-text"><strong style="color:#fff">🖼️ אולם תצוגה דיגיטלי</strong><br/>מסדרים את הנראות בסושיאל ובאתר כך שכל לקוח שנכנס מרגיש שהגיע למקום הנכון.</span>
-        </div>
-        <div class="sol-feat">
-          <span class="sol-feat-num">03</span>
-          <span class="sol-feat-text"><strong style="color:#fff">🔄 וידאו 360°</strong><br/>מיישמים את התוכן באתר, במצגות מכירה, במסכי תצוגה ובוואטסאפ – הוידאו עובד בכל מקום.</span>
-        </div>
-        <div class="sol-feat">
-          <span class="sol-feat-num">04</span>
-          <span class="sol-feat-text"><strong style="color:#fff">💰 פיצוח ההצעה ותשתית מכירות</strong><br/>מדייקים את ה-Offer ומוודאים שיש מוכנות לטיפול בלידים חמים שמגיעים.</span>
-        </div>
-        <div class="sol-feat">
-          <span class="sol-feat-num">05</span>
-          <span class="sol-feat-text"><strong style="color:#fff">🗺️ מפת דרכים למחר בבוקר</strong><br/>תוכנית עבודה פרקטית + אסטרטגיית ממומן – כך שאתה יודע בדיוק מה לעשות ביום שאחרי.</span>
-        </div>
-      </div>
-    </div>
-  </section>
+
   <!-- ══ FOR WHOM ══ -->
 
   <section class="forwhom-section">
@@ -509,60 +470,25 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
         <p>הקמנו את <strong>TV Production</strong> מתוך אמונה פשוטה:<br/><strong>וידאו הוא כלי עסקי — לא רק קישוט.</strong></p>
         <p>ראינו עסקים מצוינים שנראים חובבניים על המסך.<br/>ראינו כסף שנשרף על סרטונים שלא עובדים בשביל אף אחד.<br/>ראינו קמפיינים ממומנים שנכשלים כי אין תשתית אמון.</p>
         <p><strong>ההבדל הוא לא באיכות ההפקה. הוא באסטרטגיה.</strong><br/>בפגישת המראה נבנה איתך את האסטרטגיה הזו — ביחד.</p>
-        <div class="about-stats">
-          <div class="astat"><span class="astat-n counter" data-target="150">0</span><span class="astat-l">+ עסקים</span></div>
-          <div class="astat"><span class="astat-n counter" data-target="7">0</span><span class="astat-l">+ שנות ניסיון</span></div>
-          <div class="astat"><span class="astat-n">4.9⭐</span><span class="astat-l">דירוג</span></div>
+        <div class="trust-row">
+          <div class="trust-item">
+            <div class="trust-num" data-count="150" data-suffix="+">0</div>
+            <div class="trust-label">עסקים</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num" data-count="7" data-suffix="+">0</div>
+            <div class="trust-label">שנות ניסיון</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num" data-count="1000" data-suffix="+">0</div>
+            <div class="trust-label">פרויקטים</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ TESTIMONIALS ══ -->
-  <section class="testimonials-section">
-    <div class="section-inner">
-      <div class="sec-tag" data-scroll-reveal="fade-up">💬 הם עברו פגישת המראה</div>
-      <h2 class="section-title" data-scroll-reveal="fade-up" data-delay="80">אל תאמין לנו – תאמין להם</h2>
-      <p class="sec-subtitle" data-scroll-reveal="fade-up" data-delay="120">הודעות שקיבלנו אחרי הפגישה</p>
-      <div class="wa-testimonials" data-scroll-reveal="fade-up" data-delay="160">
-        <div class="wa-bubble wa-bubble--received">
-          <p>גל וטל, אני חייב להגיד תודה. כל כך הרבה זמן הרגשתי שהעסק שלי נראה כמו חלטורה בדיגיטל, למרות שאנחנו הכי מקצועיים בתחומנו. סוף סוף יש לי מסלול ברור שמראה ללקוחות מי אנחנו באמת 🙏</p>
-          <span class="wa-name">ירון א., מנכ"ל חברת שירותים</span>
-        </div>
-        <div class="wa-bubble wa-bubble--sent">
-          <p>הכי כאב לי לראות מתחרים פחות טובים ממני עוקפים אותי רק כי הם 'צועקים' ברשת. אחרי פגישת ההמראה הבנתי בדיוק מה עשיתי לא נכון. ה-PDF שיצאתי איתו זו מפת הדרכים הכי פרקטית שקיבלתי.</p>
-          <span class="wa-name">מיכל ר., בעלת קליניקה לאסתטיקה</span>
-        </div>
-        <div class="wa-bubble wa-bubble--received">
-          <p>פעם ראשונה שמישהו לא מנסה למכור לי "סרטון יפה ומגניב", אלא יושב ובודק איך הוידאו אמור להביא כסף. שיניתם לי את כל התפיסה לגבי מה סרטון צריך לעשות 💪</p>
-          <span class="wa-name">דניאל ס., יועץ עסקי</span>
-        </div>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testi-card" data-scroll-reveal="fade-up" data-delay="0">
-          <div class="testi-top">
-            <div class="testi-avatar" style="background:linear-gradient(135deg,#1a3a6b,#2d6abf)">ר</div>
-            <div class="testi-info"><div class="testi-name">רוני לוי</div><div class="testi-meta">קליניקה לפיזיותרפיה | תל אביב</div><div class="testi-stars">⭐⭐⭐⭐⭐</div></div>
-          </div>
-          <p class="testi-quote">הגעתי עם ערימת סרטונים שלא עשו כלום. יצאתי עם הבנה של למה הם לא עבדו ותוכנית לתקן את זה. הפגישה שווה עשרות אלפי שקלים.</p>
-        </div>
-        <div class="testi-card" data-scroll-reveal="fade-up" data-delay="70">
-          <div class="testi-top">
-            <div class="testi-avatar" style="background:linear-gradient(135deg,#4a1a6b,#8b2dbf)">ש</div>
-            <div class="testi-info"><div class="testi-name">שירה מיכאלי</div><div class="testi-meta">מעצבת גרפית | הרצליה</div><div class="testi-stars">⭐⭐⭐⭐⭐</div></div>
-          </div>
-          <p class="testi-quote">לא ידעתי שאני יכולה להיות מול מצלמה. גל ייצר לי את הסביבה הנכונה וטל בנה לי תסריט שמרגיש כמוני לגמרי. שינוי משמעותי.</p>
-        </div>
-        <div class="testi-card" data-scroll-reveal="fade-up" data-delay="140">
-          <div class="testi-top">
-            <div class="testi-avatar" style="background:linear-gradient(135deg,#1a4a2b,#2dbf5a)">א</div>
-            <div class="testi-info"><div class="testi-name">אמיר דוד</div><div class="testi-meta">יועץ משכנתאות | ירושלים</div><div class="testi-stars">⭐⭐⭐⭐⭐</div></div>
-          </div>
-          <p class="testi-quote">ה-PDF שקיבלתי בסוף הפגישה הוא מסמך אסטרטגי שאני משתמש בו כל שבוע. הם לא רק בנו לי תוכנית – הם לימדו אותי לחשוב אחרת.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+
   <!-- ══ VIDEO TESTIMONIALS ══ -->
   <section class="video-testi-section">
     <div class="video-testi-heading" data-scroll-reveal="fade-up">
@@ -605,9 +531,7 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
         <script src="https://elfsightcdn.com/platform.js" async></script>
         <div class="elfsight-app-f57a3ff2-3ba1-4816-ba2b-1bb73c9ffaa5" data-elfsight-app-lazy></div>
       </div>
-      <a href="https://www.instagram.com/tv_prod?igsh=MWY1MWVtcmE4NjBzdg==" target="_blank" rel="noopener" class="ig-follow-btn cta-pulse" data-scroll-reveal="fade-up" data-delay="200" style="margin-top: 30px;">
-        📸 ישר לאינסטגרם שלנו!
-      </a>
+
     </div>
   </section>
   <!-- ══ FAQ ══ -->
@@ -750,7 +674,47 @@ src="https://www.facebook.com/tr?id=858925123128698&ev=PageView&noscript=1"/>
 
 
 
-/* ── Scarcity Counter ── */
+/* ── Trust Counter Animation ── */
+(function(){
+  function initCountUp(){
+    var els=document.querySelectorAll('.trust-num[data-count]');
+    if(!els.length)return;
+    function animateNum(el){
+      var target=parseInt(el.dataset.count);
+      var suffix=el.dataset.suffix||'';
+      var duration=1800;
+      var start=performance.now();
+      function step(now){
+        var elapsed=now-start;
+        var progress=Math.min(elapsed/duration,1);
+        var ease=1-Math.pow(1-progress,3);
+        var value=Math.round(ease*target);
+        el.textContent=(target>=1000?value.toLocaleString('en-US'):value)+suffix;
+        if(progress<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){animateNum(e.target);observer.unobserve(e.target);}
+      });
+    },{threshold:0.5});
+    els.forEach(function(el){observer.observe(el);});
+  }
+  // מאתחל כשה-VSL נפתח
+  var vslEl=document.getElementById('vsl-phase');
+  if(vslEl){
+    var obs=new MutationObserver(function(m){
+      m.forEach(function(mu){
+        if(mu.attributeName==='class'&&!vslEl.classList.contains('hidden')){
+          obs.disconnect();
+          setTimeout(initCountUp,200);
+        }
+      });
+    });
+    obs.observe(vslEl,{attributes:true});
+  }
+})();
 (function(){
   var KEY='scarcity_count';
   var stored=sessionStorage.getItem(KEY);
